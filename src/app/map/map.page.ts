@@ -57,79 +57,21 @@ export class MapPage implements OnInit {
   care_taker_email: any = 'FAMILY FINDER';
   kid_name: any = undefined;
   inAppBrowser: any;
-
+  isGospelNews: any
   constructor(public sanitizer: DomSanitizer, private route: ActivatedRoute, private router: Router,
     public http: HttpClient, private platform: Platform, private geolocation: Geolocation,
     private alertController: AlertController, public commonService: CommonService,
     public formBuilder: FormBuilder) {
 
-    this.alertboxComponent = new AlertboxComponent(this.alertController);
-
-    this.formGroup = formBuilder.group({
-      care_taker_email: [
-        "",
-        Validators.compose([
-          Validators.minLength(4),
-          Validators.pattern("^[^@]+@[^@]+\.[^@]+$"),
-          Validators.required
-        ])
-      ],
-      care_taker_password: [
-        "",
-        Validators.compose([
-          Validators.minLength(1),
-          Validators.pattern("^null|$"),
-          //  Validators.pattern("[0-9a-z-A-Z@.#*$!?&+-/]*"),
-          Validators.required
-        ])
-      ],
-      care_taker_hp: [
-        "",
-        Validators.compose([
-          Validators.minLength(7),
-          Validators.pattern("^(?:00|\\+)[0-9\\s.\\/-]{8,20}$"),
-          Validators.required
-        ])
-      ]
-    });
-
-    this.kidFormGroup = formBuilder.group({
-      care_taker_email: [
-        "",
-        Validators.compose([
-          Validators.minLength(4),
-          Validators.pattern("^null|$"),
-          Validators.required
-        ])
-      ]
-      ,
-      kid_name: [
-        "",
-        Validators.compose([
-          Validators.minLength(1),
-          Validators.pattern("^null|$"),
-          Validators.required
-        ])
-      ]
-    });
+   
   }
 
   ngOnInit(): void {
-    this.care_taker_id = this.route.snapshot.paramMap.get("id");
-    const isNumeric = (val: string): boolean => {
-      return !isNaN(Number(val));
-    }
-    if (isNumeric(this.care_taker_id)) {
-      this.getCareTakerByID(this.care_taker_id);
-      this.isKid = false;
-    }
-    else {
-      this.isKid = true;
-      this.loginLocal = undefined;
-      this.care_taker_id = undefined;
-    }
-
-    this.tryInit();
+    let id = this.route.snapshot.paramMap.get("id");
+    if (id ==="gospel")
+      {
+        this.isGospelNews = true
+      }
   }
 
   tryInit() {

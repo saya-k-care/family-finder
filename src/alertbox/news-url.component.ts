@@ -81,7 +81,7 @@ export class URLNewsComponent implements OnInit {
 
                 res = res.replace('https://', '');
                 res = res.replace('http://', '');
-                console.log("The extracted URL from given string is: " + res);
+                //console.log("The extracted URL from given string is: " + res);
                 if (res != undefined || res != null) {
                     return res;
                 }

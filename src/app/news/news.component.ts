@@ -14,6 +14,7 @@ export class NewsComponent implements OnInit {
   @Input() expandHeight: any;
   @Input() message: any;
   @Input() arrays: any;
+  @Input() isGospelNews: any;
   is_gospel: any = false;
   is_sport: any = true;
   headline: any = "https://paris2024.rtm.gov.my/pingat"
