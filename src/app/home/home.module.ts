@@ -11,7 +11,7 @@ import { HeaderComponent } from '../header/header.component';
 
 @NgModule({
   imports: [ CommonModule, IonicModule, HomePageRoutingModule, ReactiveFormsModule],
-  declarations: [HelloComponent, HomePage, ],
+  declarations: [ HomePage, ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomePageModule {}

@@ -15,7 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { DatePipe } from '@angular/common';
 
 @NgModule({
-  declarations: [AppComponent , ],
+  declarations: [AppComponent, ],
 
   imports: [  BrowserModule, ReactiveFormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(),],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Geolocation,DatePipe], 

@@ -17,7 +17,7 @@ export class NewsComponent implements OnInit {
   is_gospel: any = false;
   is_sport: any = true;
   headline: any = "https://paris2024.rtm.gov.my/pingat"
-  tv: any = "https://olympics.bwfbadminton.com/results/4752/paris-2024-olympic-games-badminton-competition/2024-07-30"
+  tv: any = "https://olympics.bwfbadminton.com/results/4752/paris-2024-olympic-games-badminton-competition/" + this.get_today_date();
   news_arrays: any;
   bible_example_accordion_expanded: any = false
 
@@ -78,6 +78,11 @@ export class NewsComponent implements OnInit {
     let date_current =  d.setHours(d.getHours() - 6);
     const date = this.datePipe.transform(date_current, 'yyyy-MM-dd hh:mm a');
     return date
+  }
 
+  get_today_date() {
+    var d = new Date();
+    const date = this.datePipe.transform(d, 'yyyy-MM-dd');
+    return date
   }
 }

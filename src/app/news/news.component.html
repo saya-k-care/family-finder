@@ -8,7 +8,7 @@
   </div>
   <ion-button size="small" (click)="this.toggle_sport()">Hide Sports News</ion-button>
 
-  <p>  <b>Paris Time: </b> {{get_paris_time()}}
+  <p> <b>Paris Time: </b> {{get_paris_time()}}
   </p>
   <div><url-news [msg]="tv"></url-news>
   </div>
@@ -19,8 +19,8 @@
   <ion-item *ngFor="let data of news_arrays">
     <ion-label color="medium" *ngIf="data.title">
       <h1><mark style="background: #e1e4f5!important">
-        {{ data.title}}
-      </mark></h1>
+          {{ data.title}}
+        </mark></h1>
       <p> <b>Publication Date: </b>
         {{ data.pubDate}}
       <p> <b>AI Interpretation: </b>
