@@ -1,0 +1,55 @@
+<div *ngIf="expanded && !arrays">
+  {{message}}
+</div>
+
+<div *ngIf="!expanded && !arrays && !isLong">
+  {{substr(message)}}
+</div>
+
+<div *ngIf="!expanded && !arrays && isLong">
+  {{substrLong(message)}}
+</div>
+
+<div *ngIf="expanded && arrays">
+
+  <div *ngFor="let array of arrays">
+    <ion-item *ngFor="let data of array">
+          <ion-label color="medium">
+            <b> {{data.kid_datetime | date: 'dd/MM/yy hh:mm a'}}</b> 
+            &nbsp;&nbsp; <b> {{ data.kid_name}}: </b> &nbsp;&nbsp; {{data.kid_response}}.{{data.kid_location}}
+          </ion-label>
+    </ion-item>
+  </div>
+</div>
+
+<div *ngIf="!expanded && arrays">
+  <b> {{ arrays[0][0].kid_name}} </b> , {{arrays[0][0].kid_response}} . {{arrays[0][0].kid_location}}
+  <br>
+</div>
+
+<div *ngIf="expanded && care_taker_history_arrays">
+
+  <ion-button size="small" (click)="this.getHistory('7')">Last 7</ion-button>
+
+  <ion-button size="small" (click)="this.getHistory('30')">Last 30</ion-button>
+
+  <ion-button size="small" (click)="this.getHistory('99999')">All History</ion-button>
+
+  <ion-button size="small" (click)="this.delHistory()">Clean Up</ion-button>
+  <div *ngFor="let array of care_taker_history_arrays">
+
+    <div *ngFor="let data of array; index as i">
+      <ion-item *ngIf="data.care_taker_msg">
+        <ion-label color="medium">
+          <b> {{data.datetime | date: 'dd/MM/yy hh:mm a'}}</b>
+          {{data.care_taker_msg}} 
+          <ion-button size="small" fill="outline" (click)="this.copy(data.care_taker_msg)" id="i">c
+          </ion-button>
+          <p><url-extract [msg]="data.care_taker_msg"></url-extract>
+          </p>
+        </ion-label>
+      </ion-item>
+      <p></p>
+    </div>
+  </div>
+</div>

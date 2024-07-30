@@ -1,0 +1,23 @@
+
+<p></p>
+<p></p>
+
+
+<ion-content>
+  <div *ngIf="!this.isInternetOK">
+    <p></p>
+    <b>Slow or No Internet Connection: Status-></b> {{isInternetOK}}
+
+    <ion-label>Loading...Please wait</ion-label>
+    <ion-spinner size="large" name="crescent"></ion-spinner>
+
+    <ion-button size="large" (click)="tryInit()" expand="full" class="round">Re-Try Connection</ion-button>
+  </div>
+
+  <div *ngIf="this.isInternetOK">
+    <!-----  Internet OK -->
+    <app-news [expanded]="this.care_taker_lastupdate_accordion_expanded" [message]="care_taker_msg"></app-news>
+
+  </div>
+  <!-- Internet OK  ends -->
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-item>
+  <ion-label class="header2" color="medium">Local News Area</ion-label>
+</ion-item>
+
+
+<ion-button size="small" (click)="this.getNews(true)">Refresh News</ion-button>
+<ion-button size="small" (click)="this.getNews(false)">Filtered News</ion-button>
+<ion-button size="small" (click)="this.toggle_gospel()">Toggle Gospel</ion-button>
+<ion-button size="small" (click)="this.toggle_sport()">Toggle Sports News</ion-button>
+<span *ngIf="this.is_sport">
+  <div><url-news [msg]="headline"></url-news>
+  </div>
+  
+  <div><url-news [msg]="tv"></url-news>
+  </div>
+</span>
+
+<div *ngIf="news_arrays">
+  <ion-item *ngFor="let data of news_arrays">
+    <ion-label color="medium" *ngIf="data.title">
+      <h1><mark style="background: #e1e4f5!important">
+        {{ data.title}}
+      </mark></h1>
+      <p> <b>Publication Date: </b>
+        {{ data.pubDate}}
+      <p> <b>AI Interpretation: </b>
+        <mark style="background: #e1f5e8!important">
+          {{ data.news_ai}}
+        </mark>
+        <span *ngIf="this.is_gospel">
+          <p> <b>AI Bible: </b>
+            <mark style="background: #edb2e9!important">
+              {{ data.bible_ai}}
+            </mark>
+            <span *ngIf="data.bible_ai" (click)="this.toggle_accordion()" class="toggle_button">
+              <b style="color:blue">{{this.toggle_symbol(bible_example_accordion_expanded)}}</b>
+            </span>
+            <app-acc [expanded]="this.bible_example_accordion_expanded" [message]="data.bible_life"></app-acc>
+        </span>
+
+      <p>
+        <span *ngIf="!data.isPositive">
+          <b>AI Well Being: </b>
+          <mark style="background: #f7b8b1!important">
+            {{ data.well_being_ai}}
+          </mark>
+        </span>
+      <p> <b>AI Summary: </b>
+        <mark style="background: #eee9a6!important">
+          {{ data.description}}
+        </mark>
+      <p><url-extract [msg]="data.link" [url]="data.link" [enableFrame]=false></url-extract>
+    </ion-label>
+  </ion-item>
+</div>

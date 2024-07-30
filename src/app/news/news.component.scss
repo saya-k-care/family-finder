@@ -1,0 +1,45 @@
+capacitor-google-map {
+    display: inline-block;
+    width: 100%;
+    height: 400px;
+  }
+  
+  ion-content {
+    --background: none;
+  }
+  
+  .button-class {
+    min-height: 20px !important;
+    }
+  
+    .round {
+      --width: 60px;
+      --height: 60px;
+      --border-radius: 50%;
+      --vertical-align: middle;
+      --padding-start: 10px;
+      --padding-end: 10px;
+    }
+  
+    ion-spinner {
+      width: 100px !important;
+      height: 100px !important;
+  }
+  
+  .User_Label_Section {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 107px;
+  
+  }
+  
+  .header2 {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    color: primary;
+    font-weight: bold;
+    font-size: 20px !important;
+  }
