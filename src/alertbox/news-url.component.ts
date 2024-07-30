@@ -101,4 +101,5 @@ export class URLNewsComponent implements OnInit {
         return "https://" + this.getURL(str);
     }
 
+
 }

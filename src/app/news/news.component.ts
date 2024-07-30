@@ -85,4 +85,27 @@ export class NewsComponent implements OnInit {
     const date = this.datePipe.transform(d, 'yyyy-MM-dd');
     return date
   }
+
+  async copy(value: any) {
+    let title = value.title
+    let pubDate = "\n\nDate: " + value.pubDate
+    let desc = "\n\nDescription: " + value.description
+    let link = "\nSource: " + value.link
+    let more = "\n\nView more at https://eyebot.name.my/news"
+
+    let string = title  + desc + more
+    
+    let aux = document.createElement("textarea");
+   
+    aux.setAttribute("value", string);
+    aux.innerHTML = string;
+    document.body.appendChild(aux);
+    
+    //document.body.appendChild(document.createTextNode("\n"));
+    aux.select();
+    document.execCommand("copy");
+    document.body.removeChild(aux);
+
+
+  }
 }

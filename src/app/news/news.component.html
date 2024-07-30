@@ -48,8 +48,11 @@
       <p> <b>AI Summary: </b>
         <mark style="background: #eee9a6!important">
           {{ data.description}}
-        </mark>
+        </mark> 
+        <ion-button size="small" fill="outline" (click)="this.copy(data)" id="i">c
+        </ion-button>
       <p><url-extract [msg]="data.link" [url]="data.link" [enableFrame]=false></url-extract>
+
     </ion-label>
   </ion-item>
 </div>
