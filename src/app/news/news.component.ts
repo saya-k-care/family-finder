@@ -2,6 +2,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import "@angular/compiler";
 import { CareTakerService } from '../service/caretaker.service';
 import { NewsService } from '../service/news.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-news',
@@ -20,7 +21,7 @@ export class NewsComponent implements OnInit {
   news_arrays: any;
   bible_example_accordion_expanded: any = false
 
-  constructor(private newsService: NewsService) { }
+  constructor(private newsService: NewsService, private datePipe: DatePipe) { }
   ngOnInit() {
     this.getNews(true);
   }
@@ -71,4 +72,12 @@ export class NewsComponent implements OnInit {
     this.bible_example_accordion_expanded = this.bible_example_accordion_expanded === false;
   }
 
+  get_paris_time() {
+    var d = new Date();
+
+    let date_current =  d.setHours(d.getHours() - 6);
+    const date = this.datePipe.transform(date_current, 'yyyy-MM-dd hh:mm a');
+    return date
+
+  }
 }

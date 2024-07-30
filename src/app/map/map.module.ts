@@ -17,7 +17,7 @@ import { HeaderComponent } from '../header/header.component';
 
 @NgModule({
   imports: [CommonModule, IonicModule, MapPageRoutingModule, ReactiveFormsModule, FormsModule ],
-  declarations: [MapPage, AccorComponent, NewsComponent, URLNewsComponent, URLExtractComponent,CareTakerHistory],
+  declarations: [MapPage, AccorComponent, NewsComponent, URLNewsComponent, URLExtractComponent,CareTakerHistory, HeaderComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class MapPageModule {}

@@ -20,8 +20,8 @@ import { CommonService } from "src/app/service/common.service";
 <div *ngIf="this.getURL(this.msg) && !commonService.isFacebook(this.msg)">
 
  <iframe *ngIf="this.enableFrame == true"  [src]="sanitizer.bypassSecurityTrustResourceUrl(this.addHTTPs(this.msg))" allow="autoplay;"
-            frameborder="0" style='width: 100%;' height="500"
-            allowfullscreen></iframe>
+            frameborder="0" style='width: 100%;' height="400"
+            ></iframe>
             <a href="#" class="button" (click)="processMsg()">Open Link</a>
 </div>
 `

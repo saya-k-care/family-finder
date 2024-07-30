@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { NewsComponent } from './news.component';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 @NgModule({
-    declarations: [NewsComponent],
-    exports: [NewsComponent],
+    declarations: [NewsComponent, ],
+    exports: [NewsComponent, ],
     imports: [
-      CommonModule
+      CommonModule, 
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
   })

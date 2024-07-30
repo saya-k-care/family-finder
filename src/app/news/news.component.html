@@ -1,18 +1,18 @@
-<ion-item>
-  <ion-label class="header2" color="medium">Local News Area</ion-label>
-</ion-item>
-
-
 <ion-button size="small" (click)="this.getNews(true)">Refresh News</ion-button>
 <ion-button size="small" (click)="this.getNews(false)">Filtered News</ion-button>
 <ion-button size="small" (click)="this.toggle_gospel()">Toggle Gospel</ion-button>
 <ion-button size="small" (click)="this.toggle_sport()">Toggle Sports News</ion-button>
+
 <span *ngIf="this.is_sport">
   <div><url-news [msg]="headline"></url-news>
   </div>
-  
+  <ion-button size="small" (click)="this.toggle_sport()">Hide Sports News</ion-button>
+
+  <p>  <b>Paris Time: </b> {{get_paris_time()}}
+  </p>
   <div><url-news [msg]="tv"></url-news>
   </div>
+  <ion-button size="small" (click)="this.toggle_sport()">Hide Sports News</ion-button>
 </span>
 
 <div *ngIf="news_arrays">
