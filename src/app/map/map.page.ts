@@ -76,7 +76,7 @@ export class MapPage implements OnInit {
   }
 
   async getGospel() {
-    this.http.get('http://219.93.129.18:8880/finder/gospel/get',
+    this.http.get('https://eyebot.name.my/dev/location/get?id=1',
 
     ).subscribe((data: any) => {
       this.gospel = data;
