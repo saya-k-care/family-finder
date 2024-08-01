@@ -22,6 +22,16 @@ export class NewsService {
     return data;
   }
 
+  public async getNewsSports(): Promise<any> {
+    let data = await this.http
+      .get<any>(GlobalConstants.sayakURL + '/sports/get')
+      .toPromise();
+    console.log("inside getNewsSports --->" + data);
+    console.log("inside getNewsSports title--->" + data.title);
+
+    return data;
+  }
+
   public async delCareTakerHistory(id: any): Promise<any> {
     let data = await this.http
       .get<any>(GlobalConstants.sayakURL + '/caretaker/delAllWorries?id=' + id)
