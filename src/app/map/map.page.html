@@ -1,5 +1,12 @@
+<meta meta charset=utf-8>
+
+
+<div *ngIf="this.unicode">
+  ------------{{this.unicode}}---------------
+</div>
 
 <app-header></app-header>
+
 <ion-content>
   <div *ngIf="!this.isInternetOK">
     <p></p>
@@ -13,7 +20,6 @@
 
   <div *ngIf="this.isInternetOK">
     <!-----  Internet OK -->
-    <app-news [expanded]="this.care_taker_lastupdate_accordion_expanded" [message]="care_taker_msg" [isGospelNews]="isGospelNews"></app-news>
 
   </div>
   <!-- Internet OK  ends -->
