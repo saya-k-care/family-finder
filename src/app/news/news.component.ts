@@ -121,16 +121,14 @@ export class NewsComponent implements OnInit {
     + "\n\nMsia 2.30 pm Chen/Jia Wins  21-16, 21-18"
     + "\nMsia 6 pm Aaron/Soh Wins  21-18, 19-21, 21-17"
     + "\n\nWomen's doubles team of Pearly Tan and Thinaah Muralitharan faces strong competition today. Their chances are slim against China's top pair. Expected score: Chen/Jia 21-16, 21-18. "
-    + "Aaron Chia and Soh Wooi Yik, are highly competitive in the Olympic badminton event today. Given their strong track record and recent performances, they have a solid chance of advancing. I predict a close match, with a score of 21-18, 19-21, 21-17 in favor of Chia and Soh. "
+    + "\n\nAaron Chia and Soh Wooi Yik, are highly competitive in the Olympic badminton event today. Given their strong track record and recent performances, they have a solid chance of advancing. I predict a close match, with a score of 21-18, 19-21, 21-17 in favor of Chia and Soh. "
 
-    + "\n\nPasukan ganda wanita Pearly Tan dan Thinaah Muralitharan menghadapi persaingan sengit hari ini. Peluang mereka tipis berdepan dengan pasangan teratas China. Markah dijangkakan: Chen/Jia 21-16, 21-18. "
-    + "Aaron Chia dan Soh Wooi Yik, sangat kompetitif dalam acara badminton Olimpik hari ini. Dengan rekod cemerlang mereka dan prestasi terkini, mereka mempunyai peluang kukuh untuk melangkah ke hadapan. Saya meramalkan pertandingan ketat, dengan skor 21-18, 19-21, 21-17 untuk kebaikan Chia dan Soh. "
+    + "\n\n\nPasukan ganda wanita Pearly Tan dan Thinaah Muralitharan menghadapi persaingan sengit hari ini. Peluang mereka tipis berdepan dengan pasangan teratas China. Markah dijangkakan: Chen/Jia 21-16, 21-18. "
+    + "\n\nAaron Chia dan Soh Wooi Yik, sangat kompetitif dalam acara badminton Olimpik hari ini. Dengan rekod cemerlang mereka dan prestasi terkini, mereka mempunyai peluang kukuh untuk melangkah ke hadapan. Saya meramalkan pertandingan ketat, dengan skor 21-18, 19-21, 21-17 untuk kebaikan Chia dan Soh. "
 
     + "\n\nWorld Ranking"
-    + "\nNo 1. Chen/Jia"
-    + "\nNo 1. Liang/Wang"
-    + "\nNo 3. Aaron/Soh"
-    + "\nNo 12. Pearly/Thinaah"
+    + "\nChen/Jia(1) vs Pearly/Thinaah(12)"
+    + "\nLiang/Wang(1) vs Aaron/Soh(3)"
 
   async copyO() {
 
