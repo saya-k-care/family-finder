@@ -119,12 +119,10 @@ export class NewsComponent implements OnInit {
   prediction: any =
     "Open AI Prediction"
     + "\n\nMsia 2.30 pm Chen/Jia Wins  21-16, 21-18 (Actual Result) Chen/Jia Wins 21-12, 18-21, 21-15 "
-    + "\nMsia 6 pm Aaron/Soh Wins  21-18, 19-21, 21-17"
+    + "\nMsia 6 pm Aaron/Soh Wins  21-18, 19-21, 21-17 (Actual Result) Liang/Wang Wins 21-19,15-21,21-17"
     + "\nMsia 2 am LZJ Wins  21-18, 19-21, 23-21"
-    + "\n\nAaron Chia and Soh Wooi Yik, are highly competitive in the Olympic badminton event today. Given their strong track record and recent performances, they have a solid chance of advancing. I predict a close match, with a score of 21-18, 19-21, 21-17 in favor of Chia and Soh. "
     + "\n\nLee Zii Jia faces Denmark's Anders Antonsen in the Olympic men's singles badminton match. Lee has a strong chance if he plays at his peak and leverages his agility and powerful smashes. Prediction: Lee wins 21-18, 19-21, 21-17. With determination and focus, Lee can definitely win."
 
-    + "\n\nAaron Chia dan Soh Wooi Yik, sangat kompetitif dalam acara badminton Olimpik hari ini. Dengan rekod cemerlang mereka dan prestasi terkini, mereka mempunyai peluang kukuh untuk melangkah ke hadapan. Saya meramalkan pertandingan ketat, dengan skor 21-18, 19-21, 21-17 untuk kebaikan Chia dan Soh. "
     + "\n\nLee Zii Jia menghadapi Anders Antonsen dari Denmark dalam pertandingan badminton tunggal lelaki Olimpik. Lee mempunyai peluang yang tinggi jika bermain pada tahap terbaiknya dan memanfaatkan ketangkasannya serta smashes yang kuat. Ramalan: Lee menang 21-18, 19-21, 23-21. Dengan tekad dan fokus, Lee pasti boleh menang."
 
     + "\n\nWorld Ranking"
