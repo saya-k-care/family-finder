@@ -26,6 +26,8 @@ export class NewsComponent implements OnInit {
   bible_example_accordion_expanded: any = false
 
   prediction_accordion_expanded: any = false
+  analysis_accordion_expanded: any = false
+
   constructor(private newsService: NewsService, private datePipe: DatePipe) { }
   ngOnInit() {
     this.getNews(true);
@@ -102,6 +104,10 @@ export class NewsComponent implements OnInit {
     this.prediction_accordion_expanded = this.prediction_accordion_expanded === false;
   }
 
+  toggle_analysis() {
+    this.analysis_accordion_expanded = this.analysis_accordion_expanded === false;
+  }
+
   get_paris_time() {
     var d = new Date();
 
@@ -116,6 +122,22 @@ export class NewsComponent implements OnInit {
     return date
   }
 
+  ai_analysis: any =  "\n\nAnders Antonsen: "
+  + "\n\nStrengths: Antonsen is tactically intelligent, with strong defense and versatile shot selection, often using deceptive shots. His excellent stamina allows him to maintain high performance in long matches."
+  + "\n\nWeaknesses: He can be inconsistent and sometimes struggles under pressure, leading to errors at crucial moments."
+
+  + "\n\nLee Zii Jia: "
+  + "\nStrengths: Lee Zii Jia is known for his powerful smashes, speed, and agility. His aggressive playstyle puts constant pressure on opponents, and his mental toughness helps him handle high-stakes situations well."
+  + "\nWeaknesses: He struggles with shot precision, leading to unforced errors. Like Antonsen, he can be inconsistent and has a weaker defense compared to his offense, making him vulnerable to strong attackers."
+
+  + "\n\nAnders Antonsen:"
+  + "\nKelebihan: Antonsen adalah seorang yang bijak secara taktikal, dengan pertahanan yang kuat dan pemilihan pukulan yang berbagai, sering menggunakan pukulan yang menipu. Ketahanan yang cemerlang membolehkannya mengekalkan prestasi tinggi dalam perlawanan yang panjang."
+  + "\nKelemahan: Beliau boleh menjadi tidak konsisten dan kadang-kadang mengalami tekanan, menyebabkan kesilapan pada saat-saat penting."
+
+  + "\n\nLee Zii Jia:"
+  + "\nKelebihan: Lee Zii Jia dikenali dengan smashes yang kuat, kelajuan, dan ketangkasannya. Gaya permainan agresifnya memberikan tekanan berterusan kepada lawan, dan kekuatan mentalnya membantu beliau mengendalikan situasi yang berisiko tinggi dengan baik."
+  + "\nKelemahan: Beliau menghadapi masalah dalam kejituan pukulan, menyebabkan kesilapan tanpa paksaan. Seperti Antonsen, beliau boleh menjadi tidak konsisten dan mempunyai pertahanan yang lemah berbanding serangannya, menjadikannya rentan kepada penyerang yang kuat."
+
   prediction: any =
     "Open AI Prediction"
     + "\n\nMsia 2.30 pm Chen/Jia Wins  21-16, 21-18 (Actual Result) Chen/Jia Wins 21-12, 18-21, 21-15 "
@@ -126,14 +148,12 @@ export class NewsComponent implements OnInit {
     + "\n\nLee Zii Jia menghadapi Anders Antonsen dari Denmark dalam pertandingan badminton tunggal lelaki Olimpik. Lee mempunyai peluang yang tinggi jika bermain pada tahap terbaiknya dan memanfaatkan ketangkasannya serta smashes yang kuat. Ramalan: Lee menang 21-18, 19-21, 23-21. Dengan tekad dan fokus, Lee pasti boleh menang."
 
     + "\n\nWorld Ranking"
-    + "\nChen/Jia(1) vs Pearly/Thinaah(12)"
-    + "\nLiang/Wang(1) vs Aaron/Soh(3)"
     + "\nAnders(3) vs LZJ(7)"
 
   async copyO() {
 
     let more = "\n\nView more at https://eyebot.name.my/news"
-    let string = this.prediction + more;
+    let string = this.prediction + this.ai_analysis + more;
 
     let aux = document.createElement("textarea");
 

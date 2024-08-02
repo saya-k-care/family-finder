@@ -7,41 +7,45 @@
 <ion-item>
   <ion-label color="medium">
     <h1><mark style="background: #e1e4f5!important">
-      <b>Open AI Badminton Prediction: </b> 
+        <b>Open AI Badminton Prediction: </b>
       </mark></h1>
-      <br><b>Msia 2.30 pm Chen/Jia Wins</b>  21-16, 21-18 <b>(Actual Result)</b> Chen/Jia Wins 21-12, 18-21, 21-15
-      <br><b>Msia 6 pm Aaron/Soh Wins</b>  21-18, 19-21, 21-17 <b>(Actual Result)</b> Liang/Wang Wins 21-19,15-21,21-17
-      <br><b>Msia 2 am LZJ Wins</b> 21-18, 19-21, 23-21
+    <br><b>Msia 2.30 pm Chen/Jia Wins</b> 21-16, 21-18 <b>(Actual Result)</b> Chen/Jia Wins 21-12, 18-21, 21-15
+    <br><b>Msia 6 pm Aaron/Soh Wins</b> 21-18, 19-21, 21-17 <b>(Actual Result)</b> Liang/Wang Wins 21-19,15-21,21-17
+    <br><b>Msia 2 am LZJ Wins</b> 21-18, 19-21, 23-21
 
-      <p> <b>Description: </b>        <span *ngIf="prediction" (click)="this.toggle_prediction()" class="toggle_button">
+    <p> <b>Description: </b> <span *ngIf="prediction" (click)="this.toggle_prediction()" class="toggle_button">
         <b style="color:blue">{{this.toggle_symbol(prediction_accordion_expanded)}}</b>
       </span>
-        <app-acc [expanded]="this.prediction_accordion_expanded" [message]="prediction"></app-acc>
+      <app-acc [expanded]="this.prediction_accordion_expanded" [message]="prediction"></app-acc>
 
-        <ion-button size="small" fill="outline" (click)="this.copyO()" id="i">c
-        </ion-button>
-</ion-label>
+      <p> <b>AI Analysis: </b> <span *ngIf="ai_analysis" (click)="this.toggle_analysis()" class="toggle_button">
+        <b style="color:blue">{{this.toggle_symbol(analysis_accordion_expanded)}}</b>
+      </span>
+      <app-acc [expanded]="this.analysis_accordion_expanded" [message]="ai_analysis"></app-acc>
+      <ion-button size="small" fill="outline" (click)="this.copyO()" id="i">c
+      </ion-button>
+  </ion-label>
 </ion-item>
 
-<div  *ngIf="news_sport_arrays && this.is_sport">
+<div *ngIf="news_sport_arrays && this.is_sport">
   <ion-item *ngFor="let data of news_sport_arrays">
     <ion-label color="medium" *ngIf="data.title">
       <h1><mark style="background: #e1e4f5!important">
-        <b>LIFESTYLE HEADLINE: </b>{{ data.title}}
+          <b>LIFESTYLE HEADLINE: </b>{{ data.title}}
         </mark></h1>
       <p> <b>Publication Date: </b>
         {{ data.pubDate}}
       <p>
-          <span *ngIf="data.description_my && this.isBahasa">
-            <b>Bahasa: </b>
-            <mark style="background: #f7b1ea!important">
-              {{ data.description_my}}
-            </mark>
-          </span>
+        <span *ngIf="data.description_my && this.isBahasa">
+          <b>Bahasa: </b>
+          <mark style="background: #f7b1ea!important">
+            {{ data.description_my}}
+          </mark>
+        </span>
       <p> <b>AI Summary: </b>
         <mark style="background: #eee9a6!important">
           {{ data.description}}
-        </mark> 
+        </mark>
         <ion-button size="small" fill="outline" (click)="this.copy(data)" id="i">c
         </ion-button>
       <p><url-extract [msg]="data.link" [url]="data.link" [enableFrame]=false></url-extract>
@@ -93,16 +97,16 @@
           </mark>
         </span>
       <p>
-          <span *ngIf="data.description_my && this.isBahasa">
-            <b>Bahasa: </b>
-            <mark style="background: #f7b1ea!important">
-              {{ data.description_my}}
-            </mark>
-          </span>
+        <span *ngIf="data.description_my && this.isBahasa">
+          <b>Bahasa: </b>
+          <mark style="background: #f7b1ea!important">
+            {{ data.description_my}}
+          </mark>
+        </span>
       <p> <b>AI Summary: </b>
         <mark style="background: #eee9a6!important">
           {{ data.description}}
-        </mark> 
+        </mark>
         <ion-button size="small" fill="outline" (click)="this.copy(data)" id="i">c
         </ion-button>
       <p><url-extract [msg]="data.link" [url]="data.link" [enableFrame]=false></url-extract>
