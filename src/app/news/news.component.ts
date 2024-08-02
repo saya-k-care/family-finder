@@ -132,11 +132,11 @@ export class NewsComponent implements OnInit {
 
   + "\n\nAnders Antonsen:"
   + "\nKelebihan: Antonsen adalah seorang yang bijak secara taktikal, dengan pertahanan yang kuat dan pemilihan pukulan yang berbagai, sering menggunakan pukulan yang menipu. Ketahanan yang cemerlang membolehkannya mengekalkan prestasi tinggi dalam perlawanan yang panjang."
-  + "\nKelemahan: Beliau boleh menjadi tidak konsisten dan kadang-kadang mengalami tekanan, menyebabkan kesilapan pada saat-saat penting."
+  + "\n\nKelemahan: Beliau boleh menjadi tidak konsisten dan kadang-kadang mengalami tekanan, menyebabkan kesilapan pada saat-saat penting."
 
   + "\n\nLee Zii Jia:"
   + "\nKelebihan: Lee Zii Jia dikenali dengan smashes yang kuat, kelajuan, dan ketangkasannya. Gaya permainan agresifnya memberikan tekanan berterusan kepada lawan, dan kekuatan mentalnya membantu beliau mengendalikan situasi yang berisiko tinggi dengan baik."
-  + "\nKelemahan: Beliau menghadapi masalah dalam kejituan pukulan, menyebabkan kesilapan tanpa paksaan. Seperti Antonsen, beliau boleh menjadi tidak konsisten dan mempunyai pertahanan yang lemah berbanding serangannya, menjadikannya rentan kepada penyerang yang kuat."
+  + "\n\nKelemahan: Beliau menghadapi masalah dalam kejituan pukulan, menyebabkan kesilapan tanpa paksaan. Seperti Antonsen, beliau boleh menjadi tidak konsisten dan mempunyai pertahanan yang lemah berbanding serangannya, menjadikannya rentan kepada penyerang yang kuat."
 
   prediction: any =
     "Open AI Prediction"
