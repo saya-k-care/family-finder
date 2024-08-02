@@ -25,6 +25,7 @@ export class NewsComponent implements OnInit {
   news_sport_arrays: any;
   bible_example_accordion_expanded: any = false
 
+  prediction_accordion_expanded: any = false
   constructor(private newsService: NewsService, private datePipe: DatePipe) { }
   ngOnInit() {
     this.getNews(true);
@@ -97,10 +98,14 @@ export class NewsComponent implements OnInit {
     this.bible_example_accordion_expanded = this.bible_example_accordion_expanded === false;
   }
 
+  toggle_prediction() {
+    this.prediction_accordion_expanded = this.prediction_accordion_expanded === false;
+  }
+
   get_paris_time() {
     var d = new Date();
 
-    let date_current =  d.setHours(d.getHours() - 6);
+    let date_current = d.setHours(d.getHours() - 6);
     const date = this.datePipe.transform(date_current, 'yyyy-MM-dd hh:mm a');
     return date
   }
@@ -111,6 +116,38 @@ export class NewsComponent implements OnInit {
     return date
   }
 
+  prediction: any =
+    "Open AI Prediction"
+    + "\n\nMsia 2.30 pm Chen/Jia Wins  21-16, 21-18"
+    + "\nMsia 6 pm Aaron/Soh Wins  21-18, 19-21, 21-17"
+    + "\n\nWomen's doubles team of Pearly Tan and Thinaah Muralitharan faces strong competition today. Their chances are slim against China's top pair. Expected score: Chen/Jia 21-16, 21-18. "
+    + "Aaron Chia and Soh Wooi Yik, are highly competitive in the Olympic badminton event today. Given their strong track record and recent performances, they have a solid chance of advancing. I predict a close match, with a score of 21-18, 19-21, 21-17 in favor of Chia and Soh. "
+
+    + "\n\nPasukan ganda wanita Pearly Tan dan Thinaah Muralitharan menghadapi persaingan sengit hari ini. Peluang mereka tipis berdepan dengan pasangan teratas China. Markah dijangkakan: Chen/Jia 21-16, 21-18. "
+    + "Aaron Chia dan Soh Wooi Yik, sangat kompetitif dalam acara badminton Olimpik hari ini. Dengan rekod cemerlang mereka dan prestasi terkini, mereka mempunyai peluang kukuh untuk melangkah ke hadapan. Saya meramalkan pertandingan ketat, dengan skor 21-18, 19-21, 21-17 untuk kebaikan Chia dan Soh. "
+
+    + "\n\nWorld Ranking"
+    + "\nNo 1. Chen/Jia"
+    + "\nNo 1. Liang/Wang"
+    + "\nNo 3. Aaron/Soh"
+    + "\nNo 12. Pearly/Thinaah"
+
+  async copyO() {
+
+    let more = "\n\nView more at https://eyebot.name.my/news"
+    let string = this.prediction + more;
+
+    let aux = document.createElement("textarea");
+
+    aux.setAttribute("value", string);
+    aux.innerHTML = string;
+    document.body.appendChild(aux);
+
+    //document.body.appendChild(document.createTextNode("\n"));
+    aux.select();
+    document.execCommand("copy");
+    document.body.removeChild(aux);
+  }
   async copy(value: any) {
     let title = value.title
     let pubDate = "\n\nDate: " + value.pubDate
@@ -121,26 +158,26 @@ export class NewsComponent implements OnInit {
     let bible_life = "\n\nBible life example: " + value.bible_life
     let more = "\n\nView more at https://eyebot.name.my/news"
 
-    let string = title  + desc + more
-    
-    console.log("this.is_gospel-->" , this.is_gospel)
+    let string = title + desc + more
+
+    console.log("this.is_gospel-->", this.is_gospel)
 
     if (this.isBahasa && !this.is_gospel) {
-      string = title  + desc + bahasa + more
+      string = title + desc + bahasa + more
     }
 
     if (this.is_gospel) {
-      
-      string = title  + desc + bible_ai + bible_life + more
-      console.log("this.is_gospel running-->" , string)
+
+      string = title + desc + bible_ai + bible_life + more
+      console.log("this.is_gospel running-->", string)
     }
-    
+
     let aux = document.createElement("textarea");
-   
+
     aux.setAttribute("value", string);
     aux.innerHTML = string;
     document.body.appendChild(aux);
-    
+
     //document.body.appendChild(document.createTextNode("\n"));
     aux.select();
     document.execCommand("copy");

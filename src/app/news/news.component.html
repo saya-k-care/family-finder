@@ -4,6 +4,24 @@
 <ion-button size="small" (click)="this.toggle_sport()">Toggle Sports News</ion-button>
 <ion-button size="small" (click)="this.toggle_bahasa()">BM</ion-button>
 
+<ion-item>
+  <ion-label color="medium">
+    <h1><mark style="background: #e1e4f5!important">
+      <b>Open AI Badminton Prediction: </b> 
+      </mark></h1>
+      <br><b>Msia 2.30 pm Chen/Jia Wins</b>  21-16, 21-18 
+      <br><b>Msia 6 pm Aaron/Soh Wins</b>  21-18, 19-21, 21-17
+
+      <p> <b>Description: </b>        <span *ngIf="prediction" (click)="this.toggle_prediction()" class="toggle_button">
+        <b style="color:blue">{{this.toggle_symbol(prediction_accordion_expanded)}}</b>
+      </span>
+        <app-acc [expanded]="this.prediction_accordion_expanded" [message]="prediction"></app-acc>
+
+        <ion-button size="small" fill="outline" (click)="this.copyO()" id="i">c
+        </ion-button>
+</ion-label>
+</ion-item>
+
 <div  *ngIf="news_sport_arrays && this.is_sport">
   <ion-item *ngFor="let data of news_sport_arrays">
     <ion-label color="medium" *ngIf="data.title">
