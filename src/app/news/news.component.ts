@@ -122,33 +122,30 @@ export class NewsComponent implements OnInit {
     return date
   }
 
-  ai_analysis: any =  "\n\nAnders Antonsen: "
-  + "\n\nStrengths: Antonsen is tactically intelligent, with strong defense and versatile shot selection, often using deceptive shots. His excellent stamina allows him to maintain high performance in long matches."
-  + "\n\nWeaknesses: He can be inconsistent and sometimes struggles under pressure, leading to errors at crucial moments."
+  ai_analysis: any = "\n\nTAN Pearly and THINAAH Muralitharan: "
+    + "\nStrengths: Strong teamwork and powerful smashes."
+    + "\nWeaknesses: Stamina issues and vulnerability under pressure."
 
-  + "\n\nLee Zii Jia: "
-  + "\nStrengths: Lee Zii Jia is known for his powerful smashes, speed, and agility. His aggressive playstyle puts constant pressure on opponents, and his mental toughness helps him handle high-stakes situations well."
-  + "\nWeaknesses: He struggles with shot precision, leading to unforced errors. Like Antonsen, he can be inconsistent and has a weaker defense compared to his offense, making him vulnerable to strong attackers."
+    + "\n\nKelebihan: Kerjasama yang kuat dan smash yang berkuasa."
+    + "\nKelemahan: Masalah stamina dan kerentanan di bawah tekanan."
 
-  + "\n\nAnders Antonsen:"
-  + "\nKelebihan: Antonsen adalah seorang yang bijak secara taktikal, dengan pertahanan yang kuat dan pemilihan pukulan yang berbagai, sering menggunakan pukulan yang menipu. Ketahanan yang cemerlang membolehkannya mengekalkan prestasi tinggi dalam perlawanan yang panjang."
-  + "\n\nKelemahan: Beliau boleh menjadi tidak konsisten dan kadang-kadang mengalami tekanan, menyebabkan kesilapan pada saat-saat penting."
+    + "\n\nNami MATSUYAMA and Chiharu SHIDA: "
+    + "\nStrengths: Tactical awareness and agility."
+    + "\nWeaknesses: Lack of power in smashes and susceptibility to aggressive play."
 
-  + "\n\nLee Zii Jia:"
-  + "\nKelebihan: Lee Zii Jia dikenali dengan smashes yang kuat, kelajuan, dan ketangkasannya. Gaya permainan agresifnya memberikan tekanan berterusan kepada lawan, dan kekuatan mentalnya membantu beliau mengendalikan situasi yang berisiko tinggi dengan baik."
-  + "\n\nKelemahan: Beliau menghadapi masalah dalam kejituan pukulan, menyebabkan kesilapan tanpa paksaan. Seperti Antonsen, beliau boleh menjadi tidak konsisten dan mempunyai pertahanan yang lemah berbanding serangannya, menjadikannya rentan kepada penyerang yang kuat."
+    + "\n\nKelebihan: Kesedaran taktikal dan kecekapan."
+    + "\nKelemahan: Kekurangan kuasa dalam smash dan kerentanan terhadap permainan agresif."
+
+    +"\n\n\nSummary: For Malaysia to win, TAN Pearly and THINAAH Muralitharan should focus on aggressive play, exploiting opponents' lack of power, maintaining stamina, and capitalizing on teamwork to outmaneuver Nami MATSUYAMA and Chiharu SHIDA's agile tactics. Untuk Malaysia menang, TAN Pearly dan THINAAH Muralitharan perlu memberi tumpuan kepada permainan agresif, mengeksploitasi kekurangan kuasa lawan, mengekalkan stamina, dan memanfaatkan kerjasama untuk mengatasi taktik gesit Nami MATSUYAMA dan Chiharu SHIDA."
+
+
 
   prediction: any =
     "Open AI Prediction"
-    + "\n\nMsia 2.30 pm Chen/Jia Wins  21-16, 21-18 (Actual Result) Chen/Jia Wins 21-12, 18-21, 21-15 "
-    + "\nMsia 6 pm Aaron/Soh Wins  21-18, 19-21, 21-17 (Actual Result) Liang/Wang Wins 21-19,15-21,21-17"
-    + "\nMsia 2 am LZJ Wins  21-18, 19-21, 23-21"
-    + "\n\nLee Zii Jia faces Denmark's Anders Antonsen in the Olympic men's singles badminton match. Lee has a strong chance if he plays at his peak and leverages his agility and powerful smashes. Prediction: Lee wins 21-18, 19-21, 21-17. With determination and focus, Lee can definitely win."
-
-    + "\n\nLee Zii Jia menghadapi Anders Antonsen dari Denmark dalam pertandingan badminton tunggal lelaki Olimpik. Lee mempunyai peluang yang tinggi jika bermain pada tahap terbaiknya dan memanfaatkan ketangkasannya serta smashes yang kuat. Ramalan: Lee menang 21-18, 19-21, 23-21. Dengan tekad dan fokus, Lee pasti boleh menang."
+    + "\n\nMsia 9 pm Bronze-Medal Pearly/Thinaah Wins optimistically 21-16, 21-18 "
 
     + "\n\nWorld Ranking"
-    + "\nAnders(3) vs LZJ(7)"
+    + "\nNami/Shida(4) vs Pearly/Thinaah(12)"
 
   async copyO() {
 
