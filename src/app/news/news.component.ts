@@ -122,30 +122,33 @@ export class NewsComponent implements OnInit {
     return date
   }
 
-  ai_analysis: any = "\n\nTAN Pearly and THINAAH Muralitharan: "
-    + "\nStrengths: Strong teamwork and powerful smashes."
-    + "\nWeaknesses: Stamina issues and vulnerability under pressure."
+  ai_analysis: any = "\n\nAaron Chia/Soh Wooi Yik: "
+    + "\nStrengths: Strategic adaptability, strong defense, resilience under pressure. "
+    + "\nWeaknesses: Injury concerns, difficulty closing out matches. "
 
-    + "\n\nKelebihan: Kerjasama yang kuat dan smash yang berkuasa."
-    + "\nKelemahan: Masalah stamina dan kerentanan di bawah tekanan."
+    + "\n\nKelebihan: Adaptabiliti strategik, pertahanan yang kuat, ketahanan di bawah tekanan. "
+    + "\nKelemahan: Kebimbangan kecederaan, kesukaran menutup perlawanan. "
 
-    + "\n\nNami MATSUYAMA and Chiharu SHIDA: "
+    + "\n\nKim Astrup/Anders Skaarup: "
     + "\nStrengths: Tactical awareness and agility."
     + "\nWeaknesses: Lack of power in smashes and susceptibility to aggressive play."
 
-    + "\n\nKelebihan: Kesedaran taktikal dan kecekapan."
-    + "\nKelemahan: Kekurangan kuasa dalam smash dan kerentanan terhadap permainan agresif."
+    + "\n\nKelebihan: Kesedaran taktikal dan kecekapan. "
+    + "\nKelemahan: Kekurangan daya dalam smash dan rentan kepada permainan agresif. "
 
-    +"\n\n\nSummary: For Malaysia to win, TAN Pearly and THINAAH Muralitharan should focus on aggressive play, exploiting opponents' lack of power, maintaining stamina, and capitalizing on teamwork to outmaneuver Nami MATSUYAMA and Chiharu SHIDA's agile tactics. Untuk Malaysia menang, TAN Pearly dan THINAAH Muralitharan perlu memberi tumpuan kepada permainan agresif, mengeksploitasi kekurangan kuasa lawan, mengekalkan stamina, dan memanfaatkan kerjasama untuk mengatasi taktik gesit Nami MATSUYAMA dan Chiharu SHIDA."
+    + "\n\n\nSummary: Optimistically, Aaron Chia and Soh Wooi Yik could win 21-18, 19-21, 21-19 due to their strong tactical gameplay, adaptability, and head-to-head success against top pairs. Their motivation to secure a medal for Malaysia and recent resilience further bolster their chance"
+    + "\n\nDengan optimisme, Aaron Chia dan Soh Wooi Yik berpotensi menang 21-18, 19-21, 21-19 atas kekuatan permainan taktikal yang kuat, adaptabiliti, dan kejayaan head-to-head mereka menentang pasangan-pasangan teratas. Motivasi mereka untuk memastikan pingat bagi Malaysia dan ketabahan terkini mereka turut memperkasakan peluang mereka."
 
 
 
   prediction: any =
     "Open AI Prediction"
-    + "\n\nMsia 9 pm Bronze-Medal Pearly/Thinaah Wins optimistically 21-16, 21-18 "
+    + "\n\nMsia 7 pm Bronze-Medal Aaron/Soh Wins 21-15, 21-18 "
+    + "\nMsia 9 pm Semi-F LZJ Wins 21-18, 19-21, 21-19 "
 
     + "\n\nWorld Ranking"
-    + "\nNami/Shida(4) vs Pearly/Thinaah(12)"
+    + "\nKim/Anders(2) vs Aaron/Soh(3)"
+    + "\nLZJ(7) vs Vitidsarn(8)"
 
   async copyO() {
 
