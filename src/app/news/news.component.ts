@@ -122,33 +122,22 @@ export class NewsComponent implements OnInit {
     return date
   }
 
-  ai_analysis: any = "\n\nAaron Chia/Soh Wooi Yik: "
-    + "\nStrengths: Strategic adaptability, strong defense, resilience under pressure. "
-    + "\nWeaknesses: Injury concerns, difficulty closing out matches. "
-
-    + "\n\nKelebihan: Adaptabiliti strategik, pertahanan yang kuat, ketahanan di bawah tekanan. "
-    + "\nKelemahan: Kebimbangan kecederaan, kesukaran menutup perlawanan. "
-
-    + "\n\nKim Astrup/Anders Skaarup: "
-    + "\nStrengths: Tactical awareness and agility."
-    + "\nWeaknesses: Lack of power in smashes and susceptibility to aggressive play."
-
-    + "\n\nKelebihan: Kesedaran taktikal dan kecekapan. "
-    + "\nKelemahan: Kekurangan daya dalam smash dan rentan kepada permainan agresif. "
-
-    + "\n\n\nSummary: Optimistically, Aaron Chia and Soh Wooi Yik could win 21-18, 19-21, 21-19 due to their strong tactical gameplay, adaptability, and head-to-head success against top pairs. Their motivation to secure a medal for Malaysia and recent resilience further bolster their chance"
-    + "\n\nDengan optimisme, Aaron Chia dan Soh Wooi Yik berpotensi menang 21-18, 19-21, 21-19 atas kekuatan permainan taktikal yang kuat, adaptabiliti, dan kejayaan head-to-head mereka menentang pasangan-pasangan teratas. Motivasi mereka untuk memastikan pingat bagi Malaysia dan ketabahan terkini mereka turut memperkasakan peluang mereka."
-
-
+  ai_analysis: any =
+     "\n\n\nSummary: I predict Lee Zii Jia will win against Vitidsarn Kunlavut, likely with a score of 21-15, 21-18. "
+    + "\nIn this Olympic face-off, Kunlavut's agility clashes with Jia's seasoned tactics, setting the stage for a gripping badminton showdown where Kunlavut's quickness faces off against Jia's strategic prowess in a battle of skill and experience. "
+    + "\n\nSaya meramalkan bahawa Lee Zii Jia akan menang menentang Vitidsarn Kunlavut, mungkin dengan skor 21-15, 21-18. "
+    + "\nDalam pertarungan Olimpik ini, kecekapannya Kunlavut bertembung dengan taktik yang matang milik Jia, mewujudkan satu pentas yang mendebarkan untuk pertarungan badminton di mana kelajuan Kunlavut berlawan dengan kepakaran strategik Jia dalam pertarungan kemahiran dan pengalaman. "
 
   prediction: any =
     "Open AI Prediction"
-    + "\n\nMsia 7 pm Bronze-Medal Aaron/Soh Wins 21-15, 21-18 "
-    + "\nMsia 9 pm Semi-F LZJ Wins 21-18, 19-21, 21-19 "
+    + "\n\nMsia 5 pm Semi-F LZJ Wins 21-18, 19-21, 21-19 "
+    + "\nMsia 9 pm Bronze-Medal Aaron/Soh Wins 21-15, 21-18 "
+
 
     + "\n\nWorld Ranking"
-    + "\nKim/Anders(2) vs Aaron/Soh(3)"
     + "\nLZJ(7) vs Vitidsarn(8)"
+    + "\nKim/Anders(2) vs Aaron/Soh(3)"
+
 
   async copyO() {
 
