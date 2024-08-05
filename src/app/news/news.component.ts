@@ -122,29 +122,22 @@ export class NewsComponent implements OnInit {
     return date
   }
 
-  ai_analysis: any = "\n\nAaron Chia/Soh Wooi Yik: "
-  + "\nStrengths: Strategic adaptability, strong defense, resilience under pressure. "
-  + "\nWeaknesses: Injury concerns, difficulty closing out matches. "
+  ai_analysis: any = 
+   "\n\nOpen AI: Predicting a score for LEE Zii Jia vs Lakshya SEN is hard. LEE may win 21-18, 21-19 due to experience. SEN might struggle. "
+  + "\nMixtral AI: LEE could win 2-1. LEE has consistency and power, SEN is agile and tactical. Expect tight matches. "
+  + "\nClaude AI: Close match expected. LEE might win 21-18, 19-21, 21-19. LEE's experience gives edge over SEN. "
 
-  + "\n\nKelebihan: Adaptabiliti strategik, pertahanan yang kuat, ketahanan di bawah tekanan. "
-  + "\nKelemahan: Kebimbangan kecederaan, kesukaran menutup perlawanan. "
+  + "\n\nOpen AI: Meramal skor bagi perlawanan antara LEE Zii Jia dan Lakshya SEN adalah sukar. LEE mungkin menang 21-18, 21-19 disebabkan pengalaman. SEN mungkin menghadapi kesukaran. "
+  + "\nMixtral AI: LEE boleh menang 2-1. LEE mempunyai konsistensi dan kuasa, SEN agil dan taktikal. Jangkakan perlawanan ketat. "
+  + "\nClaude AI: Perlawanan ketat dijangkakan. LEE mungkin menang 21-18, 19-21, 21-19. Pengalaman LEE memberi kelebihan berbanding SEN. "
 
-  + "\n\nKim Astrup/Anders Skaarup: "
-  + "\nStrengths: Tactical awareness and agility."
-  + "\nWeaknesses: Lack of power in smashes and susceptibility to aggressive play."
-
-  + "\n\nKelebihan: Kesedaran taktikal dan kecekapan. "
-  + "\nKelemahan: Kekurangan daya dalam smash dan rentan kepada permainan agresif. "
-
-  + "\n\n\nSummary: Optimistically, Aaron Chia and Soh Wooi Yik could win 21-18, 19-21, 21-19 due to their strong tactical gameplay, adaptability, and head-to-head success against top pairs. Their motivation to secure a medal for Malaysia and recent resilience further bolster their chance"
-  + "\n\nDengan optimisme, Aaron Chia dan Soh Wooi Yik berpotensi menang 21-18, 19-21, 21-19 atas kekuatan permainan taktikal yang kuat, adaptabiliti, dan kejayaan head-to-head mereka menentang pasangan-pasangan teratas. Motivasi mereka untuk memastikan pingat bagi Malaysia dan ketabahan terkini mereka turut memperkasakan peluang mereka."
   prediction: any =
     "Open AI Prediction"
-    + "\nMsia 9 pm Bronze-Medal Aaron/Soh Wins 21-15, 21-18 "
+    + "\nMsia 8.30 pm Bronze-Medal LZJ Wins "
 
 
     + "\n\nWorld Ranking"
-    + "\nKim/Anders(2) vs Aaron/Soh(3)"
+    + "\nLZJ(7) vs Lakshya(22)"
 
 
   async copyO() {
