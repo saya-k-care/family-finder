@@ -19,6 +19,7 @@ export class NewsComponent implements OnInit {
   is_gospel: any = false;
   is_sport: any = true;
   isBahasa: any = true;
+  isChinese: any = false;
   headline: any = "https://paris2024.rtm.gov.my/pingat"
   tv: any = "https://olympics.bwfbadminton.com/results/4752/paris-2024-olympic-games-badminton-competition/" + this.get_today_date();
   news_arrays: any;
@@ -27,9 +28,15 @@ export class NewsComponent implements OnInit {
 
   prediction_accordion_expanded: any = false
   analysis_accordion_expanded: any = false
+  pinyin_accordion_expanded = false
 
   constructor(private newsService: NewsService, private datePipe: DatePipe) { }
   ngOnInit() {
+    if (this.isGospelNews) {
+      this.is_gospel = true;
+      this.isChinese = true;
+      this.isBahasa = false;
+    }
     this.getNews(true);
     this.getNewsSports();
   }
@@ -46,18 +53,35 @@ export class NewsComponent implements OnInit {
   toggle_gospel() {
     if (this.is_gospel == true) {
       this.is_gospel = false;
+      this.isBahasa = false;
     }
     else {
       this.is_gospel = true;
+      this.isBahasa = false;
     }
   }
 
   toggle_bahasa() {
     if (this.isBahasa == true) {
       this.isBahasa = false;
+      this.is_gospel = false;
+      this.isChinese = false;
     }
     else {
       this.isBahasa = true;
+      this.is_gospel = false;
+      this.isChinese = false;
+    }
+  }
+
+  toggle_chinese() {
+    if (this.isChinese == true) {
+      this.isChinese = false;
+      this.isBahasa = false;
+    }
+    else {
+      this.isChinese = true;
+      this.isBahasa = false;
     }
   }
 
@@ -108,6 +132,10 @@ export class NewsComponent implements OnInit {
     this.analysis_accordion_expanded = this.analysis_accordion_expanded === false;
   }
 
+  toggle_pinyin() {
+    this.pinyin_accordion_expanded = this.pinyin_accordion_expanded === false;
+  }
+
   get_paris_time() {
     var d = new Date();
 
@@ -122,20 +150,18 @@ export class NewsComponent implements OnInit {
     return date
   }
 
-  ai_analysis: any = 
-   "\n\nOpen AI: Predicting a score for LEE Zii Jia vs Lakshya SEN is hard. LEE may win 21-18, 21-19 due to experience. SEN might struggle. "
-  + "\nMixtral AI: LEE could win 2-1. LEE has consistency and power, SEN is agile and tactical. Expect tight matches. "
-  + "\nClaude AI: Close match expected. LEE might win 21-18, 19-21, 21-19. LEE's experience gives edge over SEN. "
+  ai_analysis: any =
+    "\n\nOpen AI: Predicting a score for LEE Zii Jia vs Lakshya SEN is hard. LEE may win 21-18, 21-19 due to experience. SEN might struggle. "
+    + "\nMixtral AI: LEE could win 2-1. LEE has consistency and power, SEN is agile and tactical. Expect tight matches. "
+    + "\nClaude AI: Close match expected. LEE might win 21-18, 19-21, 21-19. LEE's experience gives edge over SEN. "
 
-  + "\n\nOpen AI: Meramal skor bagi perlawanan antara LEE Zii Jia dan Lakshya SEN adalah sukar. LEE mungkin menang 21-18, 21-19 disebabkan pengalaman. SEN mungkin menghadapi kesukaran. "
-  + "\nMixtral AI: LEE boleh menang 2-1. LEE mempunyai konsistensi dan kuasa, SEN agil dan taktikal. Jangkakan perlawanan ketat. "
-  + "\nClaude AI: Perlawanan ketat dijangkakan. LEE mungkin menang 21-18, 19-21, 21-19. Pengalaman LEE memberi kelebihan berbanding SEN. "
+    + "\n\nOpen AI: Meramal skor bagi perlawanan antara LEE Zii Jia dan Lakshya SEN adalah sukar. LEE mungkin menang 21-18, 21-19 disebabkan pengalaman. SEN mungkin menghadapi kesukaran. "
+    + "\nMixtral AI: LEE boleh menang 2-1. LEE mempunyai konsistensi dan kuasa, SEN agil dan taktikal. Jangkakan perlawanan ketat. "
+    + "\nClaude AI: Perlawanan ketat dijangkakan. LEE mungkin menang 21-18, 19-21, 21-19. Pengalaman LEE memberi kelebihan berbanding SEN. "
 
   prediction: any =
-    "Open AI Prediction"
+    "Open, Mixtral and Claude AI Prediction"
     + "\nMsia 8.30 pm Bronze-Medal LZJ Wins "
-
-
     + "\n\nWorld Ranking"
     + "\nLZJ(7) vs Lakshya(22)"
 
@@ -165,6 +191,11 @@ export class NewsComponent implements OnInit {
     let bible_ai = "\n\nBible verse: " + value.bible_ai
     let bible_life = "\n\nBible life example: " + value.bible_life
     let more = "\n\nView more at https://eyebot.name.my/news"
+    let more_bible = "\n\nView more at https://eyebot.name.my/map/gospel"
+
+    let chinese_ai = "\n\nAI 圣经: " + value.bible_life_cn
+    let chinese_desc = "\n\nAI 结论: " + value.description_cn
+    let pinyin = "\n\nPin Yin: " + value.pinyin
 
     let string = title + desc + more
 
@@ -174,9 +205,17 @@ export class NewsComponent implements OnInit {
       string = title + desc + bahasa + more
     }
 
+    if (this.isChinese) {
+      string = title + chinese_desc + desc + more
+    }
+
     if (this.is_gospel) {
 
-      string = title + desc + bible_ai + bible_life + more
+      string = title + desc + bible_ai + bible_life + more_bible
+
+      if (this.isChinese) {
+        string = title + chinese_ai + pinyin + chinese_desc + desc + bible_ai + bible_life + more_bible
+      }
       console.log("this.is_gospel running-->", string)
     }
 

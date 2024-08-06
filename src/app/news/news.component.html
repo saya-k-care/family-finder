@@ -3,30 +3,7 @@
 <ion-button *ngIf="isGospelNews" size="small" (click)="this.toggle_gospel()">Toggle Gospel</ion-button>
 <ion-button size="small" (click)="this.toggle_sport()">Toggle Sports News</ion-button>
 <ion-button size="small" (click)="this.toggle_bahasa()">BM</ion-button>
-
-<ion-item>
-  <ion-label color="medium">
-    <h1><mark style="background: #e1e4f5!important">
-        <b>Open, Mixtral and Claude AI Badminton Prediction: </b>
-      </mark></h1>
-    <br><b>Monday, 5 August 2024 Match Msia Time</b>
-    <br><b>8.30 pm Bronze-Medal</b> LZJ wins  
-
-    <br><br>
-    <p> <b>Description: </b> <span *ngIf="prediction" (click)="this.toggle_prediction()" class="toggle_button">
-        <b style="color:blue">{{this.toggle_symbol(prediction_accordion_expanded)}}</b>
-      </span>
-      <app-acc [expanded]="this.prediction_accordion_expanded" [message]="prediction"></app-acc>
-
-    <p> <b>AI Analysis: </b> <span *ngIf="ai_analysis" (click)="this.toggle_analysis()" class="toggle_button">
-        <b style="color:blue">{{this.toggle_symbol(analysis_accordion_expanded)}}</b>
-      </span>
-      <app-acc [expanded]="this.analysis_accordion_expanded" [message]="ai_analysis"></app-acc>
-      <ion-button size="small" fill="outline" (click)="this.copyO()" id="i">c
-      </ion-button>
-
-  </ion-label>
-</ion-item>
+<ion-button size="small" (click)="this.toggle_chinese()">CN</ion-button>
 
 <div *ngIf="news_sport_arrays && this.is_sport">
   <ion-item *ngFor="let data of news_sport_arrays">
@@ -59,12 +36,6 @@
   <div><url-news [msg]="headline"></url-news>
   </div>
   <ion-button size="small" (click)="this.toggle_sport()">Hide Sports News</ion-button>
-
-  <p> <b>Paris Time: </b> {{get_paris_time()}}
-  </p>
-  <div><url-news [msg]="tv"></url-news>
-  </div>
-  <ion-button size="small" (click)="this.toggle_sport()">Hide Sports News</ion-button>
 </span>
 
 <div *ngIf="news_arrays">
@@ -90,6 +61,19 @@
             <app-acc [expanded]="this.bible_example_accordion_expanded" [message]="data.bible_life"></app-acc>
         </span>
 
+        <span *ngIf="this.is_gospel && this.isChinese">
+          <p> <b>AI 圣经: </b>
+            <mark style="background: #c7bffa!important">
+              {{ data.bible_life_cn}}
+            </mark> <br> <b> Pin Yin: </b> {{data.pinyin}}
+            <!--span *ngIf="data.pinyin" (click)="this.toggle_pinyin()" class="toggle_button">
+              <b style="color:blue">{{this.toggle_symbol(pinyin_accordion_expanded)}}</b>
+            </span-->
+            
+            <!--app-acc [expanded]="this.pinyin_accordion_expanded" [message]="data.pinyin"></app-acc-->
+        </span>
+
+
       <p>
         <span *ngIf="!data.isPositive">
           <b>AI Well Being: </b>
@@ -104,12 +88,23 @@
             {{ data.description_my}}
           </mark>
         </span>
+      <p>
       <p> <b>AI Summary: </b>
         <mark style="background: #eee9a6!important">
           {{ data.description}}
         </mark>
-        <ion-button size="small" fill="outline" (click)="this.copy(data)" id="i">c
-        </ion-button>
+      <div *ngIf="this.isChinese">
+
+        <span>
+          <p></p><b>AI 结论: </b>
+          <mark style="background: #b4f6a5!important">
+            {{data.description_cn}}
+          </mark>
+        </span>
+      </div>
+
+      <ion-button size="small" fill="outline" (click)="this.copy(data)" id="i">c
+      </ion-button>
       <p><url-extract [msg]="data.link" [url]="data.link" [enableFrame]=false></url-extract>
 
     </ion-label>

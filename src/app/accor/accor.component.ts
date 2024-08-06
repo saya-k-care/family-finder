@@ -48,22 +48,31 @@ export class AccorComponent implements OnInit {
 
   substr(msg: any) {
     // console.log("msg-->" + msg);
-
-    if (msg != undefined) {
-      let returnMsg = msg.substring(0, 40) + "...";
-      // console.log("returnMsg-->" + returnMsg);
-      return returnMsg;
+    try {
+      if (msg != undefined) {
+        let returnMsg = msg.substring(0, 40) + "...";
+        // console.log("returnMsg-->" + returnMsg);
+        return returnMsg;
+      }
+    } catch (e) {
+      console.error("substr(msg: any)-->" + e);
     }
+
+
     return msg;
   }
 
   substrLong(msg: any) {
     // console.log("msg-->" + msg);
 
-    if (msg != undefined) {
-      let returnMsg = msg.substring(0, 120) + "...";
-      // console.log("returnMsg-->" + returnMsg);
-      return returnMsg;
+    try {
+      if (msg != undefined) {
+        let returnMsg = msg.substring(0, 120) + "...";
+        // console.log("returnMsg-->" + returnMsg);
+        return returnMsg;
+      }
+    } catch (e) {
+      console.error("substrLong(msg: any)-->" + e);
     }
     return msg;
   }
