@@ -16,10 +16,12 @@ export class NewsComponent implements OnInit {
   @Input() arrays: any;
   @Input() isGospelNews: any;
 
+  filtered_ads = "https://www.youtube.com/embed/FsRMjJJoy24"
   is_gospel: any = false;
   is_sport: any = true;
   isBahasa: any = true;
   isChinese: any = false;
+  isFiltered: any = false;
   headline: any = "https://paris2024.rtm.gov.my/pingat"
   tv: any = "https://olympics.bwfbadminton.com/results/4752/paris-2024-olympic-games-badminton-competition/" + this.get_today_date();
   news_arrays: any;
@@ -86,6 +88,13 @@ export class NewsComponent implements OnInit {
   }
 
   public async getNews(is_positive: any) {
+
+    if (!is_positive) {
+      this.isFiltered = true;
+    }
+    else {
+      this.isFiltered = false;
+    }
     await this.newsService.getNews(is_positive)
       .then((data) => {
         this.news_arrays = data;

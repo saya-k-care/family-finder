@@ -109,4 +109,17 @@
 
     </ion-label>
   </ion-item>
+  
+  <div *ngIf="isFiltered">
+    <ion-item>
+      <ion-label color="medium">
+        <h1><mark style="background: #e1e4f5!important">
+            <b>Check out Dr. Christian Conte explaination about filtered news on steps no.5 below </b>
+          </mark></h1>
+          <url-news [msg]="filtered_ads"></url-news>
+      </ion-label>
+    </ion-item>
+  </div>
+
+
 </div>
