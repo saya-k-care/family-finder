@@ -1,8 +1,5 @@
 <ion-header>
 
-  <ion-toolbar>
-    <ion-title style="text-align: left !important"><b>Saya K(Care) ☘️ - Family Finder</b></ion-title>
-  </ion-toolbar>
 </ion-header>
 
 <!-- home---<hello>hello outside</hello> -->
@@ -11,35 +8,41 @@
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
     <ion-list>
       <ion-item>
-        <ion-label position="stacked">Login ID (Email)</ion-label>
-        <ion-input
-          formControlName="care_taker_email"
-          required="true"
-          type="email"
-          placeholder="Email address"
-        ></ion-input>
+        <h1>Speculative reporting nothing new in journalism, says Johan Jaafar - Free Malaysia Today</h1>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Password</ion-label>
-        <ion-input
-          formControlName="care_taker_password"
-          required="true"
-          type="password"
-          placeholder="Password"
-        ></ion-input>
+
+        <p>
+          <ion-text>
+            🔍 Recent articles highlight concerns over journalistic integrity and governmental pressure on reporters in
+            Malaysia.
+            Johan Jaaffar criticizes police investigations into benign articles, while Zaid questions the scrutiny of
+            journalists regarding a Bukit Aman reshuffle story. The discourse emphasizes the importance of protecting
+            journalists' rights and freedom.
+          </ion-text>
+        </p>
+      </ion-item>
+
+      <ion-item>
+        <div class="message sender-message">
+
+          🇦🇮 ❝ Artikel-artikel terkini menyoroti kebimbangan mengenai integriti kewartawanan dan tekanan kerajaan ke
+          atas
+          wartawan di Malaysia. Johan Jaaffar mengkritik siasatan polis ke atas artikel yang tidak berbahaya, manakala
+          Zaid mempersoalkan pemeriksaan terhadap wartawan berkaitan cerita mengenai rombakan Bukit Aman. Perbincangan
+          ini menekankan kepentingan melindungi hak dan kebebasan wartawan. ❞
+        </div>
+
       </ion-item>
       <ion-item>
-        <ion-button [disabled]="!formGroup.valid" type="submit">
-          <ion-icon name="checkmark"></ion-icon>
-          Login
-        </ion-button>
+        <div class="message receiver-message">
+          Pīnyīn ❝ Shah Firdaus has successfully advanced through several rounds in cycling events at the Paris Olympics, including reaching the semi-finals and quarter-finals in the keirin competition, keeping his gold medal hopes alive as Malaysia's last hope on the final day. ❞
+        </div>
+
       </ion-item>
     </ion-list>
   </form>
 
-  <div>
-    <ion-button style="--background:blue" (click)="register()" expand="full">Register</ion-button>
-   </div>
 
 
 </ion-content>

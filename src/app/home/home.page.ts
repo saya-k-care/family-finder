@@ -15,6 +15,7 @@ import { HelloComponent } from './hello.component';
 export class HomePage {
   formGroup: FormGroup;
   alertboxComponent: any;
+  name: any = "testing...."
 
   constructor(
  // public helloComponent: HelloComponent,

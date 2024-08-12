@@ -1,7 +1,7 @@
 <ion-button size="small" (click)="this.getNews(true)">Refresh News</ion-button>
 <ion-button size="small" (click)="this.getNews(false)">Filtered News</ion-button>
 <ion-button *ngIf="isGospelNews" size="small" (click)="this.toggle_gospel()">Toggle Gospel</ion-button>
-<ion-button size="small" (click)="this.toggle_sport()">Toggle Sports News</ion-button>
+<!-- ion-button size="small" (click)="this.toggle_sport()">Toggle Sports News</ion-button -->
 <ion-button size="small" (click)="this.toggle_bahasa()">BM</ion-button>
 <ion-button size="small" (click)="this.toggle_chinese()">CN</ion-button>
 
@@ -32,11 +32,32 @@
   </ion-item>
 </div>
 
-<span *ngIf="this.is_sport">
-  <div><url-news [msg]="headline"></url-news>
-  </div>
-  <ion-button size="small" (click)="this.toggle_sport()">Hide Sports News</ion-button>
-</span>
+<div *ngIf="news_sport_arrays && this.is_sport">
+  <ion-item *ngFor="let data of news_sport_arrays">
+    <ion-label color="medium" *ngIf="data.title">
+      <h1><mark style="background: #e1e4f5!important">
+          <b>LIFESTYLE HEADLINE: </b>{{ data.title}}
+        </mark></h1>
+      <p> <b>Publication Date: </b>
+        {{ data.pubDate}}
+      <p>
+        <span *ngIf="data.description_my && this.isBahasa">
+          <b>Bahasa: </b>
+          <mark style="background: #f7b1ea!important">
+            {{ data.description_my}}
+          </mark>
+        </span>
+      <p> <b>AI Summary: </b>
+        <mark style="background: #eee9a6!important">
+          {{ data.description}}
+        </mark>
+        <ion-button size="small" fill="outline" (click)="this.copy(data)" id="i">c
+        </ion-button>
+      <p><url-extract [msg]="data.link" [url]="data.link" [enableFrame]=false></url-extract>
+
+    </ion-label>
+  </ion-item>
+</div>
 
 <div *ngIf="news_arrays">
   <ion-item *ngFor="let data of news_arrays">
