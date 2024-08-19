@@ -33,6 +33,7 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
     if (this.isGospelNews) {
       GlobalConstants.is_gospel = true;
+      GlobalConstants.isGospelNews = true;
       GlobalConstants.isChinese = false;
       GlobalConstants.isBahasa = false;
       GlobalConstants.isAbout = false;

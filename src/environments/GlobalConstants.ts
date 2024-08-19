@@ -2,7 +2,7 @@ export class GlobalConstants {
 
     public static sayakURL: string = "https://eyebot.name.my/dev";
 
- //   public static sayakURL: string = "http://localhost:8880/finder";
+  //  public static sayakURL: string = "http://localhost:8880/finder";
 
     public static MY_CARE_MSG: string = "Alright. No worries. Your Care Taker always be with you.";
 
@@ -19,8 +19,9 @@ export class GlobalConstants {
     public static errorMessageFE: string = "Front End Error Found";
 
     public static APP_NAME: string = "EYE BOT - UNKNOWN FRIEND";
-
+   
     public static is_gospel: any = false;
+    public static isGospelNews: any = false;
     public static is_sport: any = true;
     public static isBahasa: any = false;
     public static isChinese: any = false;

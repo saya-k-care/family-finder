@@ -21,8 +21,8 @@ export class HeaderComponent implements OnInit {
     return GlobalConstants.isAbout
   }
 
-  getIsGospel() {
-    return GlobalConstants.is_gospel
+  isGospelNews() {
+    return GlobalConstants.isGospelNews
   }
 
   toggle_chinese() {
