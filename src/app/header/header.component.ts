@@ -21,6 +21,10 @@ export class HeaderComponent implements OnInit {
     return GlobalConstants.isAbout
   }
 
+  getIsGospel() {
+    return GlobalConstants.is_gospel
+  }
+
   toggle_chinese() {
     if (GlobalConstants.isChinese == true) {
       GlobalConstants.isChinese = false;
