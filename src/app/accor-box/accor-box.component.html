@@ -2,10 +2,20 @@
   <span *ngIf="isBlue" class="message blue-message">
     ❝ {{message}} ❞
   </span>
-
+  <pre *ngIf="isRed" class="message red-message" style="font-size: 18px">
+    ❝ {{message}} ❞
+  </pre>
+  <span *ngIf="isRedFiltered" class="message red-message">
+    ❝ {{message}} ❞
+  </span>
+  <pre *ngIf="isLightBlue" class="message light-blue-message">
+    ❝ {{message}} ❞
+  </pre>
   <span *ngIf="isGreen" class="message green-message">
     ❝ {{message}} ❞
   </span>
+
 </span>
+
 
 

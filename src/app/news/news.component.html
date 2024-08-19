@@ -81,7 +81,13 @@
         <span (click)="this.toggle_ai()" class="toggle_button">
           <b style="color:blue">{{this.toggle_symbol(analysis_ai_expanded,50)}}</b>
         </span>
-        <app-acc-box [expanded]="this.analysis_ai_expanded" [message]="data.news_ai" [isGreen]="true"></app-acc-box>
+
+        <span *ngIf="!getFiltered()">
+          <app-acc-box [expanded]="this.analysis_ai_expanded" [message]="data.news_ai" [isGreen]="true"></app-acc-box>
+        </span>
+        <span *ngIf="getFiltered()">
+          <app-acc-box [expanded]="this.analysis_ai_expanded" [message]="data.news_ai" [isRedFiltered]="true"></app-acc-box>
+        </span>
       </p>
     </span>
 
@@ -99,29 +105,34 @@
     <span lines="none" *ngIf="getGospel() && getChinese()" color="light">
       <p>
         <ion-text color="medium"><b>AI 圣经故事: </b>
-          <span *ngIf="!pinyin_accordion_expanded">
-            ❝ {{ data.bible_life_cn}} ❞
+          <span>
+            <span *ngIf="!pinyin_accordion_expanded">
+              ❝ {{ data.bible_life_cn}} ❞
+            </span>
             <app-acc-box [expanded]="this.pinyin_accordion_expanded" [message]="newLineCN(data.bible_life_cn)"
               [isRed]="true"></app-acc-box>
           </span>
-
-          <!--pre *ngIf="pinyin_accordion_expanded"> {{ newLineCN(data.bible_life_cn)  }}</pre-->
-          <pre *ngIf="pinyin_accordion_expanded">
-            <mark style="background: #f5e1e4!important">
-              ❝ {{ newLineCN(data.bible_life_cn)  }} ❞ 
-          </mark></pre>
-
+          <span (click)="this.toggle_pinyin()" class="toggle_button">
+            <b style="color:blue"> Pin Yin: {{this.toggle_symbol(pinyin_accordion_expanded,50)}}</b>
+          </span>
         </ion-text>
-
-
-        <span (click)="this.toggle_pinyin()" class="toggle_button">
-          <b style="color:blue"> Pin Yin: {{this.toggle_symbol(pinyin_accordion_expanded,50)}}</b>
-        </span>
+        <!--pre *ngIf="pinyin_accordion_expanded"> {{ newLineCN(data.bible_life_cn)  }}</pre-->
+        <!--ion-text>
+          <pre *ngIf="pinyin_accordion_expanded" style="font-size: 16px">
+              <mark style="background: #f5e1e4!important">
+                ❝ {{ newLineCN(data.bible_life_cn)  }} ❞ 
+            </mark></pre>
+        </ion-text-->
       </p>
+      <app-acc-box [expanded]="this.pinyin_accordion_expanded" [message]="newLine(data.pinyin)"
+      [isLightBlue]="true"></app-acc-box>
+
+      <!--pre *ngIf="getGospel() && getChinese() && pinyin_accordion_expanded">
+        <ion-textarea [autoGrow]="true">
+        {{ newLine(data.pinyin)  }}</ion-textarea>
+      </pre-->
     </span>
-    <pre *ngIf="getGospel() && getChinese() && pinyin_accordion_expanded">
-      {{ newLine(data.pinyin)  }}
-      </pre>
+
     <ion-item>
 
       <ion-button size="small" fill="outline" (click)="this.copy(data)" id="i">c

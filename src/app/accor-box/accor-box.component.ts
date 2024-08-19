@@ -15,6 +15,8 @@ export class AccorBoxComponent implements OnInit {
   @Input() isBlue: any;
   @Input() isRed: any;
   @Input() isGreen: any;
+  @Input() isLightBlue: any;
+  @Input() isRedFiltered: any;
   constructor() { }
   ngOnInit() {
 

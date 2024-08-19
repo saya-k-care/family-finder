@@ -33,7 +33,7 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
     if (this.isGospelNews) {
       GlobalConstants.is_gospel = true;
-      GlobalConstants.isChinese = true;
+      GlobalConstants.isChinese = false;
       GlobalConstants.isBahasa = false;
       GlobalConstants.isAbout = false;
     }
@@ -100,7 +100,7 @@ export class NewsComponent implements OnInit {
   getGospel() {
     return GlobalConstants.is_gospel;
   }
-  
+
   getFiltered() {
     return GlobalConstants.isFiltered;
   }
@@ -269,8 +269,14 @@ export class NewsComponent implements OnInit {
     pinyin = pinyin.toString().replace(regex, ',\n');
 
     console.log(pinyin)
+    regex = new RegExp("\\b([A-Z])\\.", 'g');
+    pinyin = pinyin.replace(regex, "$1");
 
-    return "❝ " + pinyin + " ❞"
+    //replace remaining spaces:
+    pinyin = pinyin.replace(/\./g, ". \n");
+    //regex = new RegExp(').', 'g');
+    //pinyin = pinyin.toString().replace(regex, '\n');
+    return pinyin
   }
 
   newLineCN(cn: any) {
@@ -279,8 +285,9 @@ export class NewsComponent implements OnInit {
     cn = cn.toString().replace(regex, ',\n');
 
     console.log(cn)
-
-    return cn 
+    regex = new RegExp('。', 'g');
+    cn = cn.toString().replace(regex, '。\n');
+    return cn
   }
 
 }
