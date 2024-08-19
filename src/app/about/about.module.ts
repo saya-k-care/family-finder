@@ -4,16 +4,14 @@ import { IonicModule } from '@ionic/angular';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
 import { AboutRoutingModule } from './about-routing.module';
-import { MapPage } from '../map/map.page';
-import { HelloComponent } from '../home/hello.component';
 import { AboutComponent } from './about.component';
 import { HeaderModule } from '../header/header.module';
+import { URLNewsModule } from '../../alertbox/news-url.module';
 
 @NgModule({
-  imports: [ CommonModule, IonicModule, ReactiveFormsModule, AboutRoutingModule, HeaderModule],
-  declarations: [  AboutComponent],
+  imports: [ CommonModule, IonicModule, ReactiveFormsModule, AboutRoutingModule, HeaderModule, URLNewsModule],
+  declarations: [  AboutComponent, ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AboutModule {}

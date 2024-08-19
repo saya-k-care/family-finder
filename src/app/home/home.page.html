@@ -1,48 +1,82 @@
-<ion-header>
-
-</ion-header>
+<app-header></app-header>
 
 <!-- home---<hello>hello outside</hello> -->
 
 <ion-content>
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
-    <ion-list>
-      <ion-item>
-        <h1>Speculative reporting nothing new in journalism, says Johan Jaafar - Free Malaysia Today</h1>
-      </ion-item>
-      <ion-item>
 
+  <ion-list>
+    <ion-item>
+      <h1>Speculative reporting nothing new in journalism, says Johan Jaafar - Free Malaysia Today </h1>
+    </ion-item>
+
+    <ion-item>
+      <div class="message grey-message">
         <p>
-          <ion-text>
-            🔍 Recent articles highlight concerns over journalistic integrity and governmental pressure on reporters in
-            Malaysia.
-            Johan Jaaffar criticizes police investigations into benign articles, while Zaid questions the scrutiny of
-            journalists regarding a Bukit Aman reshuffle story. The discourse emphasizes the importance of protecting
-            journalists' rights and freedom.
-          </ion-text>
+          <ion-text color="medium"><b>Tue, 13 Aug 2024 10:58:20</b></ion-text>
+          ❝ Recent articles highlight concerns over journalistic integrity and governmental
+          pressure on reporters in
+          Malaysia.
+          Johan Jaaffar criticizes police investigations into benign articles, while Zaid questions the scrutiny of
+          journalists regarding a Bukit Aman reshuffle story. The discourse emphasizes the importance of protecting
+          journalists' rights and freedom. ❞
         </p>
-      </ion-item>
+      </div>
+    </ion-item>
+    <ion-item *ngIf="isBahasa()">
+      <div class="message purple-message">
+        Bahasa: ❝ Laporan kewangan terkini S P Setia menunjukkan peningkatan ketara dalam keuntungan bersih, dengan
+        satu laporan menunjukkan kenaikan tiga kali ganda dalam 1H24. Selain itu, keuntungan bersih syarikat bagi Q2
+        melonjak kepada RM295.03 juta, didorong oleh penjualan tanah, walaupun terdapat penangguhan sementara terhadap
+        penjualan pendek akibat penurunan harga yang mendalam. ❞
+      </div>
+    </ion-item>
 
-      <ion-item>
-        <div class="message sender-message">
+    <ion-item *ngIf="isChinese()">
+      <div class="message yellow-message">
+        中: ❝ 这些文章报道了马来西亚一系列悲惨事件，包括通过DNA数据库确认无头尸体的身份，受害者家庭的情感重负，以及被谋杀的教师遗骸被发现后其丈夫对正义的呼吁。 ❞
+      </div>
+    </ion-item>
+    <ion-item>
+      <p>
+        <ion-text color="medium"><b>AI Interpretation:</b></ion-text>
+        <span (click)="this.toggle_ai()" class="toggle_button">
+          <b style="color:blue">{{this.toggle_symbol(analysis_ai_expanded,50)}}</b>
+        </span>
+        <app-acc-box [expanded]="this.analysis_ai_expanded" [message]="ai_well_being" [isGreen]="true"></app-acc-box>
+      </p>
+    </ion-item>
 
-          🇦🇮 ❝ Artikel-artikel terkini menyoroti kebimbangan mengenai integriti kewartawanan dan tekanan kerajaan ke
-          atas
-          wartawan di Malaysia. Johan Jaaffar mengkritik siasatan polis ke atas artikel yang tidak berbahaya, manakala
-          Zaid mempersoalkan pemeriksaan terhadap wartawan berkaitan cerita mengenai rombakan Bukit Aman. Perbincangan
-          ini menekankan kepentingan melindungi hak dan kebebasan wartawan. ❞
-        </div>
+    <!--ion-item>
+        <div class="message black-white-message">
+          News Summary ❝ Shah Firdaus has successfully advanced through several rounds in cycling events at the
+          Paris
+          Olympics, including reaching the semi-finals and quarter-finals in the keirin competition, keeping his gold
+          medal hopes alive as Malaysia's last hope on the final day. ❞ </div>
+      </ion-item-->
 
-      </ion-item>
-      <ion-item>
-        <div class="message receiver-message">
-          Pīnyīn ❝ Shah Firdaus has successfully advanced through several rounds in cycling events at the Paris Olympics, including reaching the semi-finals and quarter-finals in the keirin competition, keeping his gold medal hopes alive as Malaysia's last hope on the final day. ❞
-        </div>
+    <ion-item *ngIf="isGospel()">
+      <span>
+        <p> <b>AI Bible: </b>
+          {{ ai_en }}
+          <span (click)="this.toggle_accordion()" class="toggle_button">
+            <b style="color:blue">{{this.toggle_symbol(bible_example_accordion_expanded,50)}}</b>
+          </span>
+      </span>
+      <app-acc-box [expanded]="this.bible_example_accordion_expanded" [message]="ai_en_story"
+        [isBlue]="true"></app-acc-box>
+    </ion-item>
 
-      </ion-item>
-    </ion-list>
-  </form>
+    <ion-item *ngIf="isGospel() && isChinese()">
+      <span>
+        <p> <b>AI 圣经故事: </b>
+          {{ai_cn}}
+          <span (click)="this.toggle_pinyin()" class="toggle_button">
+            Pin Yin: <b style="color:blue">{{this.toggle_symbol(pinyin_accordion_expanded,50)}}</b>
+          </span>
+      </span>
 
-
+       <app-acc-box [expanded]="this.pinyin_accordion_expanded" [message]="ai_pinyin" [isRed]="true"></app-acc-box>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

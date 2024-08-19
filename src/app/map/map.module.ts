@@ -16,10 +16,12 @@ import { URLNewsComponent } from '../../alertbox/news-url.component';
 import { HeaderComponent } from '../header/header.component';
 import { HelloComponent } from '../home/hello.component';
 import { HeaderModule } from '../header/header.module';
+import { AccorBoxModule } from '../accor-box/accor-box.module';
+import { URLNewsModule } from '../../alertbox/news-url.module';
 
 @NgModule({
-  imports: [CommonModule, IonicModule, MapPageRoutingModule, ReactiveFormsModule, FormsModule , HeaderModule],
-  declarations: [ HelloComponent, MapPage, AccorComponent, NewsComponent, URLNewsComponent, URLExtractComponent,CareTakerHistory, ],
+  imports: [CommonModule, IonicModule, MapPageRoutingModule, ReactiveFormsModule, FormsModule , HeaderModule, AccorBoxModule, URLNewsModule],
+  declarations: [ HelloComponent, MapPage, AccorComponent, NewsComponent, URLExtractComponent,CareTakerHistory, ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class MapPageModule {}

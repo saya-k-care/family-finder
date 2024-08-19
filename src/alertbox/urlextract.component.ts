@@ -14,7 +14,7 @@ import { CommonService } from "src/app/service/common.service";
 }
 </style>
 <div *ngIf="this.getURL(this.msg) && this.commonService.isFacebook(this.msg)">
-    <a href="#" class="button" (click)="processMsg()">Open Link</a>
+    <a href="#" class="button" (click)="processMsg()">Open News Source</a>
 </div>
 
 <div *ngIf="this.getURL(this.msg) && !commonService.isFacebook(this.msg)">
@@ -22,7 +22,7 @@ import { CommonService } from "src/app/service/common.service";
  <iframe *ngIf="this.enableFrame == true"  [src]="sanitizer.bypassSecurityTrustResourceUrl(this.addHTTPs(this.msg))" allow="autoplay;"
             frameborder="0" style='height: 200%; width: 100%;'
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <a href="#" class="button" (click)="processMsg()">Open Link</a>
+            <a href="#" class="button" (click)="processMsg()">Open News Source</a>
 </div>
 `
 

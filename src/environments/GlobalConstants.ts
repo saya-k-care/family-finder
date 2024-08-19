@@ -19,5 +19,15 @@ export class GlobalConstants {
     public static errorMessageFE: string = "Front End Error Found";
 
     public static APP_NAME: string = "EYE BOT - UNKNOWN FRIEND";
+
+    public static is_gospel: any = false;
+    public static is_sport: any = true;
+    public static isBahasa: any = false;
+    public static isChinese: any = false;
+    public static isFiltered: any = false;
+    public static isAbout: any = false;
+
+    public static news_arrays: any;
+    public static news_sport_arrays: any;
    
 }

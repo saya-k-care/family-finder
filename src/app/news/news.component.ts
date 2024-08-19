@@ -3,6 +3,7 @@ import "@angular/compiler";
 import { CareTakerService } from '../service/caretaker.service';
 import { NewsService } from '../service/news.service';
 import { DatePipe } from '@angular/common';
+import { GlobalConstants } from '../../environments/GlobalConstants';
 
 @Component({
   selector: 'app-news',
@@ -17,11 +18,6 @@ export class NewsComponent implements OnInit {
   @Input() isGospelNews: any;
 
   filtered_ads = "https://www.youtube.com/embed/FsRMjJJoy24"
-  is_gospel: any = false;
-  is_sport: any = true;
-  isBahasa: any = true;
-  isChinese: any = false;
-  isFiltered: any = false;
   headline: any = "https://paris2024.rtm.gov.my/pingat"
   tv: any = "https://olympics.bwfbadminton.com/results/4752/paris-2024-olympic-games-badminton-competition/" + this.get_today_date();
   news_arrays: any;
@@ -31,73 +27,95 @@ export class NewsComponent implements OnInit {
   prediction_accordion_expanded: any = false
   analysis_accordion_expanded: any = false
   pinyin_accordion_expanded = false
+  analysis_ai_expanded = false
 
   constructor(private newsService: NewsService, private datePipe: DatePipe) { }
   ngOnInit() {
     if (this.isGospelNews) {
-      this.is_gospel = true;
-      this.isChinese = true;
-      this.isBahasa = false;
+      GlobalConstants.is_gospel = true;
+      GlobalConstants.isChinese = true;
+      GlobalConstants.isBahasa = false;
+      GlobalConstants.isAbout = false;
     }
     this.getNews(true);
     this.getNewsSports();
   }
 
   toggle_sport() {
-    if (this.is_sport == true) {
-      this.is_sport = false;
+    if (GlobalConstants.is_sport == true) {
+      GlobalConstants.is_sport = false;
     }
     else {
-      this.is_sport = true;
+      GlobalConstants.is_sport = true;
     }
   }
 
   toggle_gospel() {
-    if (this.is_gospel == true) {
-      this.is_gospel = false;
-      this.isBahasa = false;
+    if (GlobalConstants.is_gospel == true) {
+      GlobalConstants.is_gospel = false;
+      GlobalConstants.isBahasa = false;
     }
     else {
-      this.is_gospel = true;
-      this.isBahasa = false;
+      GlobalConstants.is_gospel = true;
+      GlobalConstants.isBahasa = false;
     }
   }
 
   toggle_bahasa() {
-    if (this.isBahasa == true) {
-      this.isBahasa = false;
-      this.is_gospel = false;
-      this.isChinese = false;
+    if (GlobalConstants.isBahasa == true) {
+      GlobalConstants.isBahasa = false;
+      GlobalConstants.is_gospel = false;
+      GlobalConstants.isChinese = false;
     }
     else {
-      this.isBahasa = true;
-      this.is_gospel = false;
-      this.isChinese = false;
+      GlobalConstants.isBahasa = true;
+      GlobalConstants.is_gospel = false;
+      GlobalConstants.isChinese = false;
     }
   }
 
   toggle_chinese() {
-    if (this.isChinese == true) {
-      this.isChinese = false;
-      this.isBahasa = false;
+    if (GlobalConstants.isChinese == true) {
+      GlobalConstants.isChinese = false;
+      GlobalConstants.isBahasa = false;
     }
     else {
-      this.isChinese = true;
-      this.isBahasa = false;
+      GlobalConstants.isChinese = true;
+      GlobalConstants.isBahasa = false;
     }
+  }
+
+  toggle_ai() {
+    this.analysis_ai_expanded = this.analysis_ai_expanded === false;
+  }
+
+  getChinese() {
+    return GlobalConstants.isChinese;
+  }
+
+  getBahasa() {
+    return GlobalConstants.isBahasa;
+  }
+
+  getGospel() {
+    return GlobalConstants.is_gospel;
+  }
+  
+  getFiltered() {
+    return GlobalConstants.isFiltered;
   }
 
   public async getNews(is_positive: any) {
 
     if (!is_positive) {
-      this.isFiltered = true;
+      GlobalConstants.isFiltered = true;
     }
     else {
-      this.isFiltered = false;
+      GlobalConstants.isFiltered = false;
     }
     await this.newsService.getNews(is_positive)
       .then((data) => {
-        this.news_arrays = data;
+        GlobalConstants.news_arrays = data;
       })
       .catch((error) => {
         console.log("this.getNews() Promise rejected with " + error);
@@ -113,7 +131,6 @@ export class NewsComponent implements OnInit {
       .catch((error) => {
         console.log("this.getNews() Promise rejected with " + error);
       });
-
   }
 
   toggle_symbol(expanded: any, length: any) {
@@ -174,6 +191,12 @@ export class NewsComponent implements OnInit {
     + "\n\nWorld Ranking"
     + "\nLZJ(7) vs Lakshya(22)"
 
+  async getNews_arrays() {
+    const myJSON = JSON.stringify(GlobalConstants.news_arrays);
+    //console.log("myJSON-->" + myJSON[0])
+    this.news_arrays = GlobalConstants.news_arrays
+    return this.news_arrays
+  }
 
   async copyO() {
 
@@ -197,32 +220,32 @@ export class NewsComponent implements OnInit {
     let desc = "\n\nDescription: " + value.description
     let bahasa = "\n\nBahasa: " + value.description_my
     let link = "\n\nSource: " + value.link
-    let bible_ai = "\n\nBible verse: " + value.bible_ai
+    let bible_ai = "\n\nAI Bible: " + value.bible_ai
     let bible_life = "\n\nBible life example: " + value.bible_life
     let more = "\n\nView more at https://eyebot.name.my/news"
     let more_bible = "\n\nView more at https://eyebot.name.my/map/gospel"
 
-    let chinese_ai = "\n\nAI 圣经: " + value.bible_life_cn
-    let chinese_desc = "\n\nAI 结论: " + value.description_cn
+    let chinese_ai = "\n\nAI 圣经故事: " + value.bible_life_cn
+    let chinese_desc = "\n\n 中: " + value.description_cn
     let pinyin = "\n\nPin Yin: " + value.pinyin
 
     let string = title + desc + more
 
-    console.log("this.is_gospel-->", this.is_gospel)
+    console.log("this.is_gospel-->", GlobalConstants.is_gospel)
 
-    if (this.isBahasa && !this.is_gospel) {
+    if (GlobalConstants.isBahasa && !GlobalConstants.is_gospel) {
       string = title + desc + bahasa + more
     }
 
-    if (this.isChinese) {
+    if (GlobalConstants.isChinese) {
       string = title + chinese_desc + desc + more
     }
 
-    if (this.is_gospel) {
+    if (GlobalConstants.is_gospel) {
 
       string = title + desc + bible_ai + bible_life + more_bible
 
-      if (this.isChinese) {
+      if (GlobalConstants.isChinese) {
         string = title + chinese_ai + pinyin + chinese_desc + desc + bible_ai + bible_life + more_bible
       }
       console.log("this.is_gospel running-->", string)
@@ -238,7 +261,26 @@ export class NewsComponent implements OnInit {
     aux.select();
     document.execCommand("copy");
     document.body.removeChild(aux);
-
-
   }
+
+  newLine(pinyin: any) {
+    var regex = new RegExp(',', 'g');
+    //replace via regex
+    pinyin = pinyin.toString().replace(regex, ',\n');
+
+    console.log(pinyin)
+
+    return "❝ " + pinyin + " ❞"
+  }
+
+  newLineCN(cn: any) {
+    var regex = new RegExp('，', 'g');
+    //replace via regex
+    cn = cn.toString().replace(regex, ',\n');
+
+    console.log(cn)
+
+    return cn 
+  }
+
 }

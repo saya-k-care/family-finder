@@ -1,5 +1,14 @@
+
+h1 {
+  font-family: "Montserrat, sans-serif";
+  font-size: 25px;
+  font-weight: 700;
+/*   text-transform: uppercase; */
+/*  color: #4CAF50; */
+}
+
 .footer-dark {
-    padding:5px 0;
+    padding:1px 0;
     color:#f0f9ff;
     background-color:#282d32;
   }

@@ -168,18 +168,6 @@ export class MapPage implements OnInit {
     this.current_location_accordion_expanded = this.current_location_accordion_expanded === false;
   }
 
-  care_taker_history_toggle_accordion() {
-    this.care_taker_history_accordion_expanded = this.care_taker_history_accordion_expanded === false;
-  }
-
-  care_taker_lastupdate_toggle_accordion() {
-    this.care_taker_lastupdate_accordion_expanded = this.care_taker_lastupdate_accordion_expanded === false;
-  }
-
-  kidLocations_toggle_accordion() {
-    this.kidLocations_accordion_expanded = this.kidLocations_accordion_expanded === false;
-  }
-
   gospel_message_toggle_accordion() {
     this.gospel_message_accordion_expanded = this.gospel_message_accordion_expanded === false;
   }

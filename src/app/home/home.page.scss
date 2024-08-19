@@ -2,7 +2,7 @@
   h1 {
     font-family: "Montserrat, sans-serif";
     text-align: center;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 700;
     line-height: 33px
   /*   text-transform: uppercase; */
@@ -42,16 +42,46 @@
     align-items: center; 
 } 
 
-.sender-message { 
+.grey-message { 
     background-color: #e0e0e0; 
     color: #000; 
     align-self: flex-start; 
 } 
 
-.receiver-message { 
+.green-message { 
     background-color: #4CAF50; 
     color: #fff; 
     align-self: flex-end; 
+}
+
+.blue-message { 
+    background-color: #4c6baf; 
+    color: #fff; 
+    align-self: flex-end; 
+} 
+
+.red-message { 
+    background-color: #f5b1b1; 
+    color: #000; 
+    align-self: flex-start; 
+} 
+
+.purple-message { 
+    background-color: #d7bceb; 
+    color: #000; 
+    align-self: flex-start; 
+} 
+
+.yellow-message { 
+    background-color: #ebe4bc; 
+    color: #000; 
+    align-self: flex-start; 
+} 
+
+.black-white-message { 
+    background-color: #000; 
+    color: #fff; 
+    align-self: flex-start; 
 } 
 
 .avatar { 
@@ -78,3 +108,13 @@
     border-radius: 5px; 
     cursor: pointer; 
 } 
+
+ion-item {
+    --min-height: 16px;
+}
+
+h2 {
+   padding: 0px;
+   margin : 0px;
+ }
+ 

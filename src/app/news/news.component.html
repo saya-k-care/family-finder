@@ -1,11 +1,4 @@
-<ion-button size="small" (click)="this.getNews(true)">Refresh News</ion-button>
-<ion-button size="small" (click)="this.getNews(false)">Filtered News</ion-button>
-<ion-button *ngIf="isGospelNews" size="small" (click)="this.toggle_gospel()">Toggle Gospel</ion-button>
-<!-- ion-button size="small" (click)="this.toggle_sport()">Toggle Sports News</ion-button -->
-<ion-button size="small" (click)="this.toggle_bahasa()">BM</ion-button>
-<ion-button size="small" (click)="this.toggle_chinese()">CN</ion-button>
-
-<div *ngIf="news_sport_arrays && this.is_sport">
+<!-- div *ngIf="news_sport_arrays && this.is_sport">
   <ion-item *ngFor="let data of news_sport_arrays">
     <ion-label color="medium" *ngIf="data.title">
       <h1><mark style="background: #e1e4f5!important">
@@ -30,9 +23,9 @@
 
     </ion-label>
   </ion-item>
-</div>
+</div -->
 
-<div *ngIf="news_sport_arrays && this.is_sport">
+<!--div *ngIf="news_sport_arrays && this.is_sport">
   <ion-item *ngFor="let data of news_sport_arrays">
     <ion-label color="medium" *ngIf="data.title">
       <h1><mark style="background: #e1e4f5!important">
@@ -57,87 +50,98 @@
 
     </ion-label>
   </ion-item>
-</div>
+</div-->
+<div *ngIf="getNews_arrays()">
+  <ion-list *ngFor="let data of news_arrays">
+    <ion-item *ngIf="data.title" class="ion-no-padding">
+      <h1>{{ data.title}} </h1>
+    </ion-item>
+    <ion-item lines="none" *ngIf="data.title" lines="none" class="ion-no-padding">
+      <div class="message grey-message">
+        <p> <ion-text color="medium"><b>{{data.pubDate}} </b></ion-text>
+          <ion-text color="medium"> ❝ {{data.description}} ❞</ion-text>
+        </p>
+      </div>
+    </ion-item>
 
-<div *ngIf="news_arrays">
-  <ion-item *ngFor="let data of news_arrays">
-    <ion-label color="medium" *ngIf="data.title">
-      <h1><mark style="background: #e1e4f5!important">
-          {{ data.title}}
-        </mark></h1>
-      <p> <b>Publication Date: </b>
-        {{ data.pubDate}}
-      <p> <b>AI Interpretation: </b>
-        <mark style="background: #e1f5e8!important">
-          {{ data.news_ai}}
-        </mark>
-        <span *ngIf="this.is_gospel">
-          <p> <b>AI Bible: </b>
-            <mark style="background: #edb2e9!important">
-              {{ data.bible_ai}}
-            </mark>
-            <span *ngIf="data.bible_ai" (click)="this.toggle_accordion()" class="toggle_button">
-              <b style="color:blue">{{this.toggle_symbol(bible_example_accordion_expanded)}}</b>
-            </span>
-            <app-acc [expanded]="this.bible_example_accordion_expanded" [message]="data.bible_life"></app-acc>
-        </span>
+    <ion-item lines="none" *ngIf="getBahasa() && data.description_my" lines="none">
+      <div class="message purple-message">
+        Bahasa: ❝ {{data.description_my}} ❞
+      </div>
+    </ion-item>
 
-        <span *ngIf="this.is_gospel && this.isChinese">
-          <p> <b>AI 圣经: </b>
-            <mark style="background: #c7bffa!important">
-              {{ data.bible_life_cn}}
-            </mark> <br> <b> Pin Yin: </b> {{data.pinyin}}
-            <!--span *ngIf="data.pinyin" (click)="this.toggle_pinyin()" class="toggle_button">
-              <b style="color:blue">{{this.toggle_symbol(pinyin_accordion_expanded)}}</b>
-            </span-->
-            
-            <!--app-acc [expanded]="this.pinyin_accordion_expanded" [message]="data.pinyin"></app-acc-->
-        </span>
-
-
+    <ion-item lines="none" *ngIf="getChinese()">
+      <div class="message yellow-message">
+        中: ❝ {{data.description_cn}} ❞
+      </div>
+    </ion-item>
+    <span *ngIf="data.news_ai" lines="none">
       <p>
-        <span *ngIf="!data.isPositive">
-          <b>AI Well Being: </b>
-          <mark style="background: #f7b8b1!important">
-            {{ data.well_being_ai}}
-          </mark>
+        <ion-text color="medium"><b>AI Way Of Life: </b></ion-text>
+        <span (click)="this.toggle_ai()" class="toggle_button">
+          <b style="color:blue">{{this.toggle_symbol(analysis_ai_expanded,50)}}</b>
         </span>
+        <app-acc-box [expanded]="this.analysis_ai_expanded" [message]="data.news_ai" [isGreen]="true"></app-acc-box>
+      </p>
+    </span>
+
+    <span lines="none" *ngIf="getGospel()" color="light">
       <p>
-        <span *ngIf="data.description_my && this.isBahasa">
-          <b>Bahasa: </b>
-          <mark style="background: #f7b1ea!important">
-            {{ data.description_my}}
-          </mark>
+        <ion-text color="medium"><b>AI Bible:</b> {{ data.bible_ai}}</ion-text>
+        <span (click)="this.toggle_accordion()" class="toggle_button">
+          <b style="color:blue">{{this.toggle_symbol(bible_example_accordion_expanded,50)}}</b>
         </span>
+        <app-acc-box [expanded]="this.bible_example_accordion_expanded" [message]="data.bible_life"
+          [isBlue]="true"></app-acc-box>
+      </p>
+    </span>
+
+    <span lines="none" *ngIf="getGospel() && getChinese()" color="light">
       <p>
-      <p> <b>AI Summary: </b>
-        <mark style="background: #eee9a6!important">
-          {{ data.description}}
-        </mark>
-      <div *ngIf="this.isChinese">
+        <ion-text color="medium"><b>AI 圣经故事: </b>
+          <span *ngIf="!pinyin_accordion_expanded">
+            {{ data.bible_life_cn}}
+          </span>
+          <app-acc-box [expanded]="this.pinyin_accordion_expanded" [message]="newLineCN(data.bible_life_cn)"
+            [isRed]="true"></app-acc-box>
+
+          <!--pre *ngIf="pinyin_accordion_expanded"> {{ newLineCN(data.bible_life_cn)  }}</pre-->
+        </ion-text>
+
+        <span (click)="this.toggle_pinyin()" class="toggle_button">
+          <b style="color:blue"> Pin Yin: {{this.toggle_symbol(pinyin_accordion_expanded,50)}}</b>
+        </span>
 
         <span>
-          <p></p><b>AI 结论: </b>
-          <mark style="background: #b4f6a5!important">
-            {{data.description_cn}}
-          </mark>
+
         </span>
-      </div>
+
+      </p>
+
+    </span>
+
+    <pre *ngIf="getGospel() && getChinese() && pinyin_accordion_expanded"> {{ newLine(data.pinyin)  }}</pre>
+
+
+
+    <ion-item>
 
       <ion-button size="small" fill="outline" (click)="this.copy(data)" id="i">c
-      </ion-button>
-      <p><url-extract [msg]="data.link" [url]="data.link" [enableFrame]=false></url-extract>
+      </ion-button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <url-extract [msg]="data.link" [url]="data.link" [enableFrame]=false></url-extract>
 
-    </ion-label>
-  </ion-item>
-  
-  <div *ngIf="isFiltered">
+    </ion-item>
+
+
+  </ion-list>
+
+  <div *ngIf="getFiltered()">
     <ion-item>
       <ion-label color="medium">
         <h1><mark style="background: #e1e4f5!important">
             <b>Check out Dr. Christian Conte explaination about filtered news on steps no.5 below </b>
           </mark></h1>
-          <url-news [msg]="filtered_ads"></url-news>
+        <url-news [msg]="filtered_ads"></url-news>
       </ion-label>
     </ion-item>
   </div>
