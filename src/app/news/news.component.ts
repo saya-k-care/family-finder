@@ -42,6 +42,14 @@ export class NewsComponent implements OnInit {
     this.getNewsSports();
   }
 
+  replaceCNTuple(str: any) {
+    str = JSON.stringify(str)
+    str = str.replace('{"py/tuple":[["','');
+    str = str.replace('"]','');
+    str = str.replace(']}','');
+    return str
+  }
+
   toggle_sport() {
     if (GlobalConstants.is_sport == true) {
       GlobalConstants.is_sport = false;

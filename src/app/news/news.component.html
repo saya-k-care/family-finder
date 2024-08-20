@@ -72,7 +72,7 @@
 
     <ion-item lines="none" *ngIf="getChinese()">
       <div class="message yellow-message">
-        中: ❝ {{data.description_cn}} ❞
+        中: ❝ {{replaceCNTuple(data.description_cn)}} ❞
       </div>
     </ion-item>
     <span *ngIf="data.news_ai" lines="none">

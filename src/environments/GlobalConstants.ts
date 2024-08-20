@@ -1,6 +1,6 @@
 export class GlobalConstants {
 
-    public static sayakURL: string = "https://eyebot.name.my/dev";
+   public static sayakURL: string = "https://eyebot.name.my/dev";
 
   //  public static sayakURL: string = "http://localhost:8880/finder";
 
