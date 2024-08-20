@@ -43,10 +43,15 @@ export class NewsComponent implements OnInit {
   }
 
   replaceCNTuple(str: any) {
-    str = JSON.stringify(str)
-    str = str.replace('{"py/tuple":[["','');
-    str = str.replace('"]','');
-    str = str.replace(']}','');
+    try {
+
+      str = JSON.stringify(str)
+      str = str.replace('{"py/tuple":[["', '');
+      str = str.replace('"]', '');
+      str = str.replace(']}', '');
+    } catch (e) {
+      console.log(e);
+    }
     return str
   }
 
@@ -273,30 +278,39 @@ export class NewsComponent implements OnInit {
   }
 
   newLine(pinyin: any) {
-    var regex = new RegExp(',', 'g');
-    //replace via regex
-    pinyin = pinyin.toString().replace(regex, ',\n');
+    try {
+      var regex = new RegExp(',', 'g');
+      //replace via regex
+      pinyin = pinyin.toString().replace(regex, ',\n');
 
-    console.log(pinyin)
-    regex = new RegExp("\\b([A-Z])\\.", 'g');
-    pinyin = pinyin.replace(regex, "$1");
+      console.log(pinyin)
+      regex = new RegExp("\\b([A-Z])\\.", 'g');
+      pinyin = pinyin.replace(regex, "$1");
 
-    //replace remaining spaces:
-    pinyin = pinyin.replace(/\./g, ". \n");
-    //regex = new RegExp(').', 'g');
-    //pinyin = pinyin.toString().replace(regex, '\n');
+      //replace remaining spaces:
+      pinyin = pinyin.replace(/\./g, ". \n");
+      //regex = new RegExp(').', 'g');
+      //pinyin = pinyin.toString().replace(regex, '\n');
+    } catch (e) {
+      console.log(e);
+    }
     return pinyin
   }
 
   newLineCN(cn: any) {
-    var regex = new RegExp('，', 'g');
-    //replace via regex
-    cn = cn.toString().replace(regex, ',\n');
+    try {
+      var regex = new RegExp('，', 'g');
+      //replace via regex
+      cn = cn.toString().replace(regex, ',\n');
 
-    console.log(cn)
-    regex = new RegExp('。', 'g');
-    cn = cn.toString().replace(regex, '。\n');
+      console.log(cn)
+      regex = new RegExp('。', 'g');
+      cn = cn.toString().replace(regex, '。\n');
+    } catch (e) {
+      console.log(e);
+    }
     return cn
+
   }
 
 }
