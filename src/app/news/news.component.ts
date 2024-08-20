@@ -240,7 +240,7 @@ export class NewsComponent implements OnInit {
     let more_bible = "\n\nView more at https://eyebot.name.my/map/gospel"
 
     let chinese_ai = "\n\nAI 圣经故事: " + value.bible_life_cn
-    let chinese_desc = "\n\n 中: " + value.description_cn
+    let chinese_desc = "\n\n中: " + this.replaceCNTuple(value.description_cn)
     let pinyin = "\n\nPin Yin: " + value.pinyin
 
     let string = title + desc + more
