@@ -51,7 +51,9 @@
     </ion-item>
 
     <ion-item lines="none" lines="none" class="ion-justify-content-center">
-      <ion-img class="center" [src]="features"></ion-img>
+      <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(features)" allow="autoplay;" frameborder="0"
+      style='height:600px;; width: 100%;'
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </ion-item>
 
     <ion-item *ngIf="getisGospel()">
