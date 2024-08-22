@@ -19,10 +19,10 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() { GlobalConstants.isAbout = true }
 
-  features = "http://219.93.129.18:9000/app/pic/features.png"
-  how = "http://219.93.129.18:9000/app/pic/how.png"
-  bible_cn = "http://219.93.129.18:9000/app/pic/bible_cn.png"
-  bible_en = "http://219.93.129.18:9000/app/pic/bible_en.png"
+  features = "https://eyebot.name.my/pic/features.png"
+  how = "https://eyebot.name.my/pic/how.png"
+  bible_cn = "https://eyebot.name.my/pic/bible_cn.png"
+  bible_en = "https://eyebot.name.my/pic/bible_en.png"
   filtered_ads = "https://eyebot.name.my/temp/kkm.jpg"
 
   getChinese() {
