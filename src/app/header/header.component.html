@@ -34,10 +34,10 @@
         <ion-button size="small" (click)="this.getNews(false)">Filtered News</ion-button>
         <ion-button  *ngIf="isGospelNews()" size="small" (click)="this.toggle_gospel()">Gospel</ion-button>
         <ion-button size="small" (click)="this.toggle_bahasa()">BM</ion-button>
-        <ion-button size="small" (click)="this.toggle_chinese()">CN</ion-button>
+
       </span>
-
-
+      <ion-button size="small" (click)="this.toggle_chinese()">CN</ion-button>
+      <ion-button *ngIf="getIsAbout()" size="small" (click)="this.toggle_chinese()">EN</ion-button>
       <!--p class="copyright">MataBot © 2024</p-->
     </div>
 

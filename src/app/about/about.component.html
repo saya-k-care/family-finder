@@ -1,32 +1,115 @@
 <app-header></app-header>
+<ion-content>
 
+  <ion-list >
+    <ion-item lines="none" lines="none" class="ion-justify-content-center"></ion-item>
+    <ion-item lines="none" lines="none" class="ion-justify-content-center">
+      <b>
+        <h1>About
+        </h1>
+      </b>
+    </ion-item>
 
-<div class="container">
-  <div id="about">
-    <h2>
-      <div style='float:left; margin-bottom:20px;'>
-        <b>WNext Lifestyle News</b>
-
+    <ion-item lines="none" lines="none" class="ion-justify-content-center">
+      <div class="message grey-message" *ngIf="!getChinese()">
+        ❝ Lifestyle news is a free real-time news platform supported by OpenAI integrates machine learning and deep
+        learning technologies. Specializing in promoting healthy lifestyles, it offers AI-driven interpretation and
+        analysis. Powered by OpenAI and Matabot API, this service delivers insightful content on wellness. Stay tuned
+        for more updates on this innovative news source that combines advanced AI capabilities with a focus on health
+        and well-being. ❞
       </div>
-    </h2>
-    <br>
+      <div class="message grey-message" *ngIf="getChinese()">
+        ❝
+        生活方式新闻是一个由OpenAI支持的免费实时新闻平台，整合了机器学习和深度学习技术。专注于推广健康生活方式，提供基于AI的解释和分析。由OpenAI和Matabot
+        API提供支持，此服务提供关于健康的富有洞见的内容。请继续关注这一创新性新闻来源的更多更新，它将先进的AI功能与关注健康和幸福的重点相结合。
+        ❞
+      </div>
+    </ion-item>
 
-    <br><br><br>
-    is an FREE real time news supported with Open AI using both machine learning and deep learning mechanism.
-    <br><br>
-    The news will be focusing in healthy lifestyle with AI Interpretation and analysis powered by OpenAI and Matabot API.
-    <br><br>More coming. Stay tune.
-    <p></p>
-    For support, please contact matabotmin[at]outlook.com
-    <p></p>
-    <!-- img src="http://219.93.129.18:9000/app/kkm.jpg" alt="W3Schools.com" style="width:304px;height:300px;" -->
+    <ion-item lines="none">
+      <div class="message yellow-message" *ngIf="!getChinese()">
+        ❝ We need to look more carefully at the way (negative) news is presented in the media, as well as the frequency
+        of exposure to the news,
+        in order to prevent people from being negatively affected by it. ❞ Source: Natascha de Hoog and Peter Verboon.
+        Faculty of Psychology and Educational Sciences, Open University of the Netherlands,Heerlen, The Netherlands ❞
+      </div>
+      <div class="message yellow-message" *ngIf="getChinese()">
+        ❝
+        我们需要更仔细地审视媒体中（负面）新闻的呈现方式，以及暴露于新闻的频率，以防止人们受到负面影响。❞ 来源：Natascha de Hoog 和 Peter Verboon。荷兰开放大学心理学与教育科学系，荷兰赫伦。
+      </div>
+    </ion-item>
+
+    <!--ion-item lines="none" lines="none" class="ion-justify-content-center">
+      <ion-img class="center" [src]="features"></ion-img>
+    </ion-item-->
+
+    <ion-item>
+      <b>
+        <h2>Lifestyle News Features
+        </h2>
+      </b>
+    </ion-item>
+
+    <ion-item lines="none" lines="none" class="ion-justify-content-center">
+      <ion-img class="center" [src]="features"></ion-img>
+    </ion-item>
+
+    <ion-item *ngIf="getisGospel()">
+      <b>
+        <h2>How Lifestyle News Gospel Version Works (For Christian Only)
+        </h2>
+      </b>
+    </ion-item>
+
+    <iframe *ngIf="getChinese() && getisGospel()" [src]="sanitizer.bypassSecurityTrustResourceUrl(bible_cn)" allow="autoplay;" frameborder="0"
+      style='height:600px;; width: 100%;'
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      
+    <iframe *ngIf="!getChinese() && getisGospel()" [src]="sanitizer.bypassSecurityTrustResourceUrl(bible_en)" allow="autoplay;" frameborder="0"
+    style='height:600px;; width: 100%;'
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <ion-item *ngIf="!getisGospel()">
+      <b>
+        <h2>How Lifestyle News Works
+        </h2>
+      </b>
+    </ion-item>
+
+    <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(how)" allow="autoplay;" frameborder="0"
+      style='height:600px;; width: 100%;'
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <ion-item>
+      <b>
+        <h2>What is Quantum Consciousness
+        </h2>
+      </b>
+    </ion-item>
+    <ion-item lines="none">
+      <div class="message green-message" *ngIf="!getChinese()">
+        ❝ Quantum consciousness posits that quantum phenomena within the brain contribute to the emergence of
+        consciousness. It proposes that processes at the quantum level, such as superposition and entanglement, may
+        influence cognitive functions. This theory attempts to bridge the gap between the quantum realm and
+        consciousness, exploring how the uncertainty and non-locality of quantum mechanics could relate to subjective
+        experiences. While controversial, it offers a perspective on how the complexities of quantum physics might
+        elucidate the enigmatic nature of consciousness, suggesting that quantum effects could play a role in shaping
+        our awareness and understanding of the mind-body connection. ❞
+      </div>
+
+      <div class="message green-message" *ngIf="getChinese()">
+        ❝
+        量子意识理论认为大脑内的量子现象对意识的产生起到作用。它提出，量子级别的过程，如叠加和纠缠，可能影响认知功能。这一理论试图弥合量子领域与意识之间的差距，探讨量子力学的不确定性和非局域性如何与主观经验相关。尽管有争议，但它提供了一种视角，说明量子物理学的复杂性可能阐明意识的神秘本质，暗示量子效应可能在塑造我们对心灵
+        - 身体联系的意识和理解中发挥作用。 ❞
+      </div>
+    </ion-item>
+
+  </ion-list>
 
 
-  </div>
 
-</div>
+</ion-content>
 
 
 <!-- img src="http://219.93.129.18:9000/app/kkm.jpg" alt="W3Schools.com" style="width:104px;height:142px;" -->
-
-
