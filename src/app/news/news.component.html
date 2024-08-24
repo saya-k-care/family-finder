@@ -145,13 +145,20 @@
   </ion-list>
 
   <div *ngIf="getFiltered()">
-    <ion-item>
+    <!-- ion-item>
       <ion-label color="medium">
         <h1><mark style="background: #e1e4f5!important">
             <b>Check out Dr. Christian Conte explaination about filtered news on steps no.5 below </b>
           </mark></h1>
         <url-news [msg]="filtered_ads"></url-news>
       </ion-label>
+    </ion-item -->
+
+    <ion-item>
+      <iframe 
+      [src]="sanitizer.bypassSecurityTrustResourceUrl(conte)" frameborder="0" width="100%"
+      height="609" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
     </ion-item>
   </div>
 

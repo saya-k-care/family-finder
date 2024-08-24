@@ -4,6 +4,7 @@ import { CareTakerService } from '../service/caretaker.service';
 import { NewsService } from '../service/news.service';
 import { DatePipe } from '@angular/common';
 import { GlobalConstants } from '../../environments/GlobalConstants';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-news',
@@ -17,6 +18,8 @@ export class NewsComponent implements OnInit {
   @Input() arrays: any;
   @Input() isGospelNews: any;
 
+  conte = "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fwnexttutor%2Fposts%2Fpfbid0QbvefSNLiMzKBfsiUMEK6ZJzKfdpZ6TSD6E5N9RoD2r6zHdRQ6Sjh2EbCWo91y4al&show_text=true&width=500"
+
   filtered_ads = "https://www.youtube.com/embed/FsRMjJJoy24"
   headline: any = "https://paris2024.rtm.gov.my/pingat"
   tv: any = "https://olympics.bwfbadminton.com/results/4752/paris-2024-olympic-games-badminton-competition/" + this.get_today_date();
@@ -29,7 +32,7 @@ export class NewsComponent implements OnInit {
   pinyin_accordion_expanded = false
   analysis_ai_expanded = false
 
-  constructor(private newsService: NewsService, private datePipe: DatePipe) { }
+  constructor(private newsService: NewsService, private datePipe: DatePipe, public sanitizer: DomSanitizer,) { }
   ngOnInit() {
     if (this.isGospelNews) {
       GlobalConstants.is_gospel = true;
