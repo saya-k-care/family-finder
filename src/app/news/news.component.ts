@@ -136,7 +136,6 @@ export class NewsComponent implements OnInit {
       .catch((error) => {
         console.log("this.getNews() Promise rejected with " + error);
       });
-
   }
 
   public async getNewsSports() {
@@ -273,7 +272,6 @@ export class NewsComponent implements OnInit {
     aux.innerHTML = string;
     document.body.appendChild(aux);
 
-    //document.body.appendChild(document.createTextNode("\n"));
     aux.select();
     document.execCommand("copy");
     document.body.removeChild(aux);
