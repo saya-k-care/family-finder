@@ -10,8 +10,6 @@ export class GlobalConstants {
 
     public static eyeBotApiURL: string = "https://eyebot.name.my";
 
-    public static agentURL: string = "https://eyebot.name.my:3000/agent/update/"
-
     public static successMessage: string = "Info";
 
     public static errorMessage: string = "BackEnd Error Found";
