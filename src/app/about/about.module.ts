@@ -7,7 +7,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about.component';
 import { HeaderModule } from '../header/header.module';
-import { URLNewsModule } from '../../alertbox/news-url.module';
+import { URLNewsModule } from '../util/news-url.module';
 
 @NgModule({
   imports: [ CommonModule, IonicModule, ReactiveFormsModule, AboutRoutingModule, HeaderModule, URLNewsModule],

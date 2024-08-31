@@ -1,10 +1,9 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { DomSanitizer } from "@angular/platform-browser";
-import { CareTakerService } from "src/app/service/caretaker.service";
 import { CommonService } from "src/app/service/common.service";
 
 @Component({
-    selector: 'url-news',
+    selector: 'url-extract',
     template: `
   <style>
 .button {
@@ -14,21 +13,21 @@ import { CommonService } from "src/app/service/common.service";
 }
 </style>
 <div *ngIf="this.getURL(this.msg) && this.commonService.isFacebook(this.msg)">
-    <a href="#" class="button" (click)="processMsg()">Open Link</a>
+    <a href="#" class="button" (click)="processMsg()">Open News Source</a>
 </div>
 
 <div *ngIf="this.getURL(this.msg) && !commonService.isFacebook(this.msg)">
 
  <iframe *ngIf="this.enableFrame == true"  [src]="sanitizer.bypassSecurityTrustResourceUrl(this.addHTTPs(this.msg))" allow="autoplay;"
-            frameborder="0" style='width: 100%;' height="300"
-            ></iframe>
-            <a href="#" class="button" (click)="processMsg()">Open Link</a>
+            frameborder="0" style='height: 200%; width: 100%;'
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <a href="#" class="button" (click)="processMsg()">Open News Source</a>
 </div>
 `
 
 
 })
-export class URLNewsComponent implements OnInit {
+export class URLExtractComponent implements OnInit {
     @Input() msg: any;
     @Input() url: any;
     @Input() enableFrame: boolean = true;
@@ -81,7 +80,7 @@ export class URLNewsComponent implements OnInit {
 
                 res = res.replace('https://', '');
                 res = res.replace('http://', '');
-                //console.log("The extracted URL from given string is: " + res);
+                // console.log("The extracted URL from given string is: " + res);
                 if (res != undefined || res != null) {
                     return res;
                 }
@@ -100,6 +99,5 @@ export class URLNewsComponent implements OnInit {
     public addHTTPs(str: any) {
         return "https://" + this.getURL(str);
     }
-
 
 }

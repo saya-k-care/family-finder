@@ -1,6 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import "@angular/compiler";
-import { CareTakerService } from '../service/caretaker.service';
 
 @Component({
   selector: 'app-acc-box',

@@ -1,6 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import "@angular/compiler";
-import { CareTakerService } from '../service/caretaker.service';
 import { NewsService } from '../service/news.service';
 import { DatePipe } from '@angular/common';
 import { GlobalConstants } from '../../environments/GlobalConstants';
