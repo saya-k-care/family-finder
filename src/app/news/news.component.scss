@@ -1,36 +1,12 @@
-.button-class {
-  min-height: 20px !important;
-}
 
 ion-spinner {
   width: 100px !important;
   height: 100px !important;
 }
 
-pre {
-  padding: 0px;
-  display: inline;
-}
-
 br {
   padding: 0px;
   display: inline;
-}
-
-ion-textarea {
-  --padding-end: 0px;
-  --padding-start: 0px;
-  --padding-bottom: 0px;
-  --padding-top: 0px;
-  --placeholder-opacity: 0;
-}
-
-textarea {
-  background: none;
-  outline: none;
-  -webkit-appearance: none;
-  box-shadow: none !important;
-  border: none;
 }
 
 h1 {
@@ -51,72 +27,6 @@ h1 {
 a {
   text-decoration: none;
   color: #008CBA;
-}
-
-.message {
-  padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
-  word-wrap: break-word;
-  display: flex;
-  align-items: center;
-}
-
-.grey-message {
-  background-color: #e0e0e0;
-  color: #000;
-  align-self: flex-start;
-}
-
-.green-message {
-  background-color: #4CAF50;
-  color: #fff;
-  align-self: flex-end;
-}
-
-.blue-message {
-  background-color: #4c6baf;
-  color: #fff;
-  align-self: flex-end;
-}
-
-.red-message {
-  background-color: #f5b1b1;
-  color: #000;
-  align-self: flex-start;
-}
-
-.purple-message {
-  background-color: #d7bceb;
-  color: #000;
-  align-self: flex-start;
-}
-
-.yellow-message {
-  background-color: #ebe4bc;
-  color: #000;
-  align-self: flex-start;
-}
-
-.black-white-message {
-  background-color: #000;
-  color: #fff;
-  align-self: flex-start;
-}
-
-ion-item {
-  padding: 0px;
-  --min-height: 16px;
-}
-
-ion-list {
-  padding: 0px;
-  --min-height: 16px;
-}
-
-h2 {
-  padding: 0px;
-  margin: 0px;
 }
 
 p {

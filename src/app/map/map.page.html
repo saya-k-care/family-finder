@@ -3,20 +3,23 @@
 <app-header></app-header>
 
 <ion-content>
-  <div *ngIf="!this.isInternetOK">
-    <p></p>
-    <b>Slow or No Internet Connection: Status-></b> {{isInternetOK}}
+  <div class="background-color">
+    <div *ngIf="!this.isInternetOK">
+      <p></p>
+      <b>Slow or No Internet Connection: Status-></b> {{isInternetOK}}
 
-    <ion-label>Loading...Please wait</ion-label>
-    <ion-spinner size="large" name="crescent"></ion-spinner>
+      <ion-label>Loading...Please wait</ion-label>
+      <ion-spinner size="large" name="crescent"></ion-spinner>
 
-    <ion-button size="large" (click)="tryInit()" expand="full" class="round">Re-Try Connection</ion-button>
+      <ion-button size="large" (click)="tryInit()" expand="full" class="round">Re-Try Connection</ion-button>
+    </div>
+
+    <div *ngIf="this.isInternetOK">
+      <!-----  Internet OK -->
+      <app-news [isGospelNews]="isGospelNews"></app-news>
+
+    </div>
+    <!-- Internet OK  ends -->
   </div>
 
-  <div *ngIf="this.isInternetOK">
-    <!-----  Internet OK -->
-    <app-news [isGospelNews]="isGospelNews"></app-news>
-
-  </div>
-  <!-- Internet OK  ends -->
 </ion-content>
