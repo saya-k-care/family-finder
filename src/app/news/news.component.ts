@@ -51,6 +51,8 @@ export class NewsComponent implements OnInit {
       str = str.replace('{"py/tuple":[["', '');
       str = str.replace('"]', '');
       str = str.replace(']}', '');
+      str = str.replace('["', '');
+      
     } catch (e) {
       console.log(e);
     }
