@@ -11,13 +11,13 @@ import { RouteReuseStrategy } from '@angular/router';
 import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 import { ReactiveFormsModule } from '@angular/forms';
 import "@angular/compiler";
-import { HeaderComponent } from './header/header.component';
+import { AdsenseModule } from 'ng2-adsense';
 import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, ],
 
-  imports: [  BrowserModule, ReactiveFormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(),],
+  imports: [  AdsenseModule.forRoot(), BrowserModule, ReactiveFormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(),],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, Geolocation,DatePipe], 
   bootstrap: [AppComponent],
   exports: [
